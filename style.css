@@ -167,12 +167,13 @@ header .btn-contato button:hover{
 .logo img {
     max-width: 240px;  /* Ajuste o valor conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
+    margin-right: 100px;
 }
 
 /* estilo do topo do site */
 
 section.topo-do-site {
-    padding: 40px 4%;
+    padding: 100px 4%;
 }
 
 section.topo-do-site .flex {
@@ -226,7 +227,7 @@ main .btn-contato button:hover{
 /* ESTILO DAS ESPECIALIDADES */
 
 section.especialidades {
-    padding: 125px 4%;
+    padding: 145px 4%;
 }
 
 section.especialidades .flex {
