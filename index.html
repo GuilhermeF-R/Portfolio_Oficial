@@ -198,10 +198,10 @@
                 <h2 class="titulo">FALE <span>COMIGO</span>!</h2>
 
                 <form id="contact-form" method="POST">
-                    <input type="text" name="name" id="name" placeholder="Seu nome:" required>
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail:" required>
-                    <input type="text" name="phone" id="phone" placeholder="Seu celular:" required>
-                    <textarea name="message" id="message"  placeholder="Escreva sua mensagem:" required></textarea>
+                    <input type="text" name="name" id="name" placeholder="Seu nome:" >
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail:" >
+                    <input type="text" name="phone" id="phone" placeholder="Seu celular:" >
+                    <textarea name="message" id="message"  placeholder="Escreva sua mensagem:" ></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>
 
@@ -243,32 +243,38 @@
     <script src="menu.js" defer></script>
 
     <!-- script para envio de emails-->
-    <script src="email.js" defer></script>
+    <script src="server/email.js" defer></script>
 
     <!-- Server manipula essa requisição POST verifica e usa o Nodemailer para enviar o e-mail com os dados do formulário.-->
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio normal do formulário
-
-            // Captura os dados do formulário
-            const formData = new FormData(this);
-
-            // Envia os dados via AJAX para o servidor
-            fetch('/send-email', {
+            event.preventDefault();
+        
+            // Coletar os dados do formulário
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+        
+            // Enviar os dados para o servidor
+            fetch('http://localhost:3000/send-email', {
                 method: 'POST',
-                body: formData,  // Os dados do formulário serão enviados no corpo da requisição
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             })
-            .then(response => response.text()) // Espera a resposta como texto
+            .then(response => response.text())
             .then(data => {
-                // Exibe a resposta do servidor (por exemplo, "E-mail enviado com sucesso!")
-                alert(data);
+                alert(data);  // Exibe a resposta do servidor
             })
             .catch(error => {
-                // Exibe erro caso o envio falhe
                 console.error('Erro:', error);
                 alert('Erro ao enviar o e-mail');
             });
-        });
+        });        
     </script>
 
 </body>
