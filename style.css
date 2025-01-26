@@ -1,0 +1,413 @@
+
+/*estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", serif;  
+}
+
+
+body {
+    background-color: #000;
+    height: 100vh;
+    margin-top: 100px; /* Ajuste para corresponder à altura total do header */
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto; /* Para centralizar */
+    padding: 0 60px; /* Adiciona um padding de 20px nas laterais */
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:rgb(62, 104, 243);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: rgb(73, 112, 241);
+}
+
+/* estilo do cabeçalho */
+header{
+    padding: 40px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.89); /* Mesma cor de fundo */
+    z-index: 1000; /* Para ficar acima de outros elementos */
+    padding: 0 4%; /* Reduza o padding para ajustar melhor */
+    box-shadow: 0 0 40px rgb(0, 0, 0); /* Adiciona uma sombra */
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;  /* Corrigido */
+    justify-content: space-between;
+}
+
+header a{
+    color: #5c5c5c;
+    text-decoration:none;
+    font-size: 20px;
+    display: inline-block;
+    transition: .2s;
+}
+header a:hover{
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+header .btn-contato button:hover{
+    box-shadow: 0px 0px 12px rgb(73, 112, 241);
+    color: rgb(0, 25, 107) ;
+    transition: .2s;
+}
+
+/* Diminuir o tamanho da logo */
+.logo img {
+    max-width: 240px;  /* Ajuste o valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* estilo do topo do site */
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+    align-items: center ;
+    justify-content: center ;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color:rgb(62, 104, 243);
+    font-size: 60px;
+
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px rgba(96, 150, 252, 0.41);
+}
+
+@keyframes flutuar{
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 30px;
+    }
+}
+
+
+main .btn-contato button:hover{
+    box-shadow: 0px 0px 12px rgb(73, 112, 241);
+    color: rgb(0, 25, 107) ;
+    transition: .2s;
+    transform: scale(1.05);
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+
+section.especialidades {
+    padding: 125px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    margin-top: 45px;
+    transition: 2s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(96, 150, 252, 0.41);
+}
+
+.especialidades .especialidades-box i{
+    font-size: 70px;
+    color: rgb(62, 104, 243);
+}
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO SOBRE MIM */
+
+section.sobre {
+    padding: 70px 4%;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span{
+    color: rgb(62, 104, 243);
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .img-sobre img {
+    max-width: 400px;  /* Ajuste o valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 30px;
+    transition: .2s;
+}
+.sobre .img-sobre img:hover {
+   box-shadow: 0 0 20px rgba(96, 150, 252, 0.41);
+   transform: scale(1.05);
+}
+
+.sobre .txt-sobre .btn-social button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color:  rgb(62, 104, 243);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+.sobre .txt-sobre .btn-social button:hover {
+    box-shadow: 0 0 8px rgb(109, 158, 248);
+    transform: scale(1.05);
+    
+}
+
+/* ESTILO DO PORTFÓLIO */
+
+section.portfolio { 
+    padding: 100px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+section.portfolio .flex{
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0;
+    transition: 8s;
+    border-radius: 40px;
+    position: relative;
+}
+.img-port:hover {
+    background-position: 100% 100%;
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.82);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+.overlay:hover {
+    box-shadow: 0 0 20px rgb(109, 158, 248);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ESTILO DO FORMULARIO DE CONTATO */
+
+section.contato { 
+    padding: 100px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input, form textarea {
+    width: 100%;
+    background-color:  rgb(36, 36, 36);
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    height: 200px;
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+
+}
+form .btn-enviar input[type=submit] {
+    width:120px;
+    background-color: rgb(62, 104, 243);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+form .btn-enviar input[type=submit]:hover {
+    box-shadow: 0px 0px 12px rgb(73, 112, 241);
+    color: rgb(0, 25, 107) ;
+    transition: .2s;
+    transform: scale(1.05);
+ }
+
+ /* ESTILO DO RODAPÉ */
+
+footer {
+    padding: 30px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+
+ }
+
+ footer .flex {
+    justify-content: space-between;
+    
+ }
+ footer .btn-social button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color:  rgb(62, 104, 243);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+footer .btn-social button:hover {
+    box-shadow: 0 0 8px rgb(109, 158, 248);
+    transform: scale(1.05);
+    
+}
+
+
+footer .logo-footer img {
+    max-width: 140px;  /* Ajuste o valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+footer .line-footer {
+    padding: 20px 0;
+    
+    
+}
+
+.borda {
+    border-top: 2px solid rgb(62, 104, 243);
+}
+
+footer .line-footer p i{
+    color: rgb(62, 104, 243);
+    font-size: 22px;
+
+}
+footer .line-footer p a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado */
+
+}
+
+footer .line-footer h1 {
+    font-size: 11px;
+    color: #fff;
+}
+
+footer .line-footer h1 span{
+    color: rgb(73, 112, 241);
+}
+
+
+
