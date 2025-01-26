@@ -497,6 +497,19 @@ footer .line-footer h1 span{
         line-height: 30px;
     }
 
+    .topo-do-site h1{
+        text-align: center;
+    }
+    
+
+    .topo-do-site p {
+        text-align: center;
+    }
+
+    .sobre .txt-sobre p {
+        text-align: center;
+    }
+
     /* CABEÇALHO */
     .menu-desktop, .btn-contato {
         display: none;
