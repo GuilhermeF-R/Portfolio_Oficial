@@ -242,10 +242,7 @@
     <!-- script menu mobile-->
     <script src="menu.js" defer></script>
 
-    <!-- script para envio de emails-->
-    <script src="server/email.js" defer></script>
-
-    <!-- Server manipula essa requisição POST verifica e usa o Nodemailer para enviar o e-mail com os dados do formulário.-->
+    <!-- front-end se comunicando com o back-end, Server.-->
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
