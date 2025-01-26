@@ -410,4 +410,126 @@ footer .line-footer h1 span{
 }
 
 
+@media screen and (max-width: 1380px){
+    /* Classes gerais */
+    .flex { 
+        flex-direction: column;
+    }
+    
+   
 
+    h2.titulo{
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* CABEÇALHO */
+    .menu-desktop, .btn-contato {
+        display: none;
+    }
+
+    header{
+        position: absolute;
+    }
+    
+    /* TOPO DO SITE */
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    section.topo-do-site .flex {
+        gap: 60px;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;  
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    /* ESTILO DAS ESPECIALIDADES */
+
+    section.especialidades {
+        padding: 40px 8%;
+    }
+
+    section.especialidades .flex {
+        gap: 60px;
+    }
+
+    /*ESTILO DE SOBRE MIM */
+    section.sobre {
+        padding: 60px 8%;
+    }
+    
+    section.sobre .flex{
+        align-items: center;
+        gap: 60px;
+    }
+
+    .sobre .flex {
+        flex-direction: column-reverse;
+    }
+
+    .sobre .img-sobre img {
+        width: 100%; 
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    /* .sobre .txt-sobre p {
+        text-align: center;
+    } */
+
+    .sobre .btn-social {
+        text-align: center;
+    }
+
+    /* PORTFOLIO */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    section.portfolio .flex {
+        gap: 60px;
+    }
+
+    .img-port{
+        width: 100%;
+        max-width: 360px;
+        margin:0 auto;
+    }
+
+
+    /* ESTILO DO FORMULARIO DE CONTATO */
+
+    section.contato { 
+        padding: 50px 8%;
+    }
+
+    /* RODAPÉ */
+
+    footer.flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
+    footer .line-footer h1 {
+        margin-top: 5px;
+    }
+
+}
