@@ -235,15 +235,16 @@ section.especialidades {
 }
 
 section.especialidades .flex {
-    gap: 60px;
+    gap: 50px;
 }
 
 .especialidades .especialidades-box {
     color: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 25px;
-    margin-top: 45px;
+    margin-top: 65px;
     transition: 2s;
+    text-align: center;
 }
 
 .especialidades .especialidades-box:hover {
