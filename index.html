@@ -246,7 +246,7 @@
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-        
+    
             // Coletar os dados do formulário
             const formData = {
                 name: document.getElementById('name').value,
@@ -254,9 +254,9 @@
                 phone: document.getElementById('phone').value,
                 message: document.getElementById('message').value
             };
-        
+    
             // Enviar os dados para o servidor
-            fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', {
+            fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', { // Verifique se essa URL está correta
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -271,8 +271,8 @@
                 console.error('Erro:', error);
                 alert('Erro ao enviar o e-mail');
             });
-        });        
-    </script>
+        });
+    </script>    
 
 </body>
 </html>
