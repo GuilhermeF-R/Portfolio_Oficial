@@ -109,6 +109,12 @@
                 <h2 class="titulo">MINHAS <span>HABILIDADES</span>.</h2>
                 <div class="flex">
 
+                    <!-- Botão de seta para a esquerda -->
+                    <div class="button-esquerda">
+                        <i class="bi bi-arrow-left-circle-fill" onclick="moveCarousel('esquerda', 'especialidades')"></i>
+                    </div>
+                    
+                    <!-- home skills -->
                     <div class="especialidades-box">
                         <i class="bi bi-code-slash"></i>
                         <h3>PYTHON</h3>
@@ -142,8 +148,116 @@
                             onde combino minha experiência em 
                             front-end e back-end para entregar uma experiência fluida e funcional.
                         </p>
+
+                    <!-- 4,5 e 6 -->
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-puzzle"></i>
+                        <h3>REACT</h3>
+                        <p>Com React, criei 
+                            interfaces dinâmicas e 
+                            responsivas. Um exemplo é 
+                            o projeto 'Hashtaurante', 
+                            onde utilizei componentes 
+                            reutilizáveis para 
+                            melhorar a experiência do usuário 
+                            e a performance da aplicação.
+                        </p>
+                    </div><!--especialidades-box-->
+                    
+                    <div class="especialidades-box">
+                        <i class="bi bi-file-earmark-code"></i>
+                        <h3>NODE.JS</h3>
+                        <p>Com Node.js, implementei a integração do envio de e-mails 
+                            através de uma API e do Nodemailer, permitindo que este site 
+                            envie mensagens diretamente para minha conta. A configuração 
+                            foi realizada de forma segura, 
+                            utilizando variáveis de ambiente para proteger dados sensíveis.
+                        </p>
+
+
+                    </div><!--especialidades-box-->
+                    
+                    <div class="especialidades-box">
+                        <i class="bi bi-database"></i>
+                        <h3>SQL</h3>
+                        <p>Com SQL, criei alguns bancos de dados 
+                            simples e desenvolvi consultas para 
+                            armazenar e recuperar informações de 
+                            forma eficiente em sistemas.
+                        </p>
+                    </div><!--especialidades-box-->
+                    
+                    <!-- 7, 8, 9 e 10 (10 é separado) -->
+                    <div class="especialidades-box">
+                        <i class="bi bi-server"></i>
+                        <h3>BACK-END</h3>
+                        <p>Minha experiência com backend 
+                            vem aumentando, trabalhando com 
+                            Node.js, Express e bancos de dados 
+                            relacionais. Desenvolvo APIs 
+                            simples e eficientes, sempre buscando 
+                            melhorar a performance e segurança dos 
+                            sistemas.
+                        </p>
+
                     </div><!--especialidades-box-->
 
+                    <div class="especialidades-box">
+                        <i class="bi bi-browser-chrome"></i>
+                        <h3>FRONT-END</h3>
+                        <p>Minha experiência em frontend 
+                            abrange o uso de HTML, CSS, 
+                            JavaScript, e frameworks 
+                            como React. 
+                            Utilizo muito da minha experiência 
+                            como designer para criar 
+                            interfaces de usuário modernas, 
+                            responsivas e intuitivas, 
+                            proporcionando uma experiência 
+                            agradável e fluída aos usuários.
+                        </p>
+
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-book"></i>
+                        <h3>ENGENHARIA DE SOFTWARE</h3>
+                        <p>Atualmente, estou cursando 
+                            Engenharia de Software na Unicesumar, 
+                            onde estou aprendendo não apenas as 
+                            tecnologias mais atuais, 
+                            mas também a lógica por trás do 
+                            desenvolvimento de sistemas. 
+                            Minha formação acadêmica 
+                            me proporciona uma base sólida 
+                            e amplia minha visão sobre a 
+                            criação de soluções inovadoras e 
+                            eficientes no mundo digital.
+                        </p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-lightbulb"></i>
+                        <h3>CRIATIVIDADE PARA RESOLVER PROBLEMAS</h3>
+                        <p>Sou movido pelo desafio de 
+                            encontrar soluções criativas 
+                            para problemas complexos. 
+                            Acredito que a inovação surge 
+                            da combinação de pensamento 
+                            analítico e criativo, 
+                            o que me permite superar 
+                            obstáculos de maneira eficaz 
+                            e gerar soluções inesperadas 
+                            e eficientes, tanto no desenvolvimento 
+                            quanto em outras áreas.
+                        </p>
+                    </div><!--especialidades-box-->                    
+                    
+                    <!-- Botão de seta para a direita -->
+                    <div class="button-direita">
+                        <i class="bi bi-arrow-right-circle-fill" onclick="moveCarousel('direita', 'especialidades')"></i>
+                    </div>
 
                 </div><!--flex-->
             </div><!--interface-->
@@ -179,7 +293,7 @@
 
                     <!-- Botão de seta para a esquerda -->
                     <div class="button-esquerda">
-                        <i class="bi bi-arrow-left-circle-fill" onclick="moveCarousel('esquerda')"></i>
+                        <i class="bi bi-arrow-left-circle-fill" onclick="moveCarousel('esquerda', 'portfolio')"></i>
                     </div>
 
                         <div class="img-port" style="background-image: url(Images/port1.gif);">
@@ -216,7 +330,7 @@
 
                     <!-- Botão de seta para a direita -->
                     <div class="button-direita">
-                        <i class="bi bi-arrow-right-circle-fill" onclick="moveCarousel('direita')"></i>
+                        <i class="bi bi-arrow-right-circle-fill" onclick="moveCarousel('direita', 'portfolio')"></i>
                     </div>
 
                 </div><!--flex-->

@@ -1,49 +1,71 @@
-let currentIndex = 0; // Começa com o primeiro conjunto visível (1, 2, 3)
-const projects = document.querySelectorAll('.img-port'); // Todos os projetos
-const totalProjects = projects.length; // Total de projetos no carrossel
+let currentIndexPortfolio = 0; // Índice atual dos projetos do portfólio
+let currentIndexEspecialidades = 0; // Índice atual das especialidades
 
-// Inicializa os projetos com display: none, exceto os primeiros 3
-projects.forEach((project, index) => {
+// Seleciona os elementos de projetos do portfólio e especialidades
+const portfolioItems = document.querySelectorAll('.img-port'); // Todos os projetos
+const totalPortfolioItems = portfolioItems.length; // Total de projetos
+
+const especialidadesItems = document.querySelectorAll('.especialidades-box'); // Todas as especialidades
+const totalEspecialidadesItems = especialidadesItems.length; // Total de especialidades
+
+// Inicializa o display dos portfólios
+portfolioItems.forEach((item, index) => {
     if (index >= 3) {
-        project.style.display = 'none'; // Esconde os projetos 4, 5, 6 inicialmente
+        item.style.display = 'none'; // Esconde os projetos 4, 5, 6
     } else {
-        project.classList.add('project-visible'); // Adiciona a animação nos primeiros
+        item.classList.add('project-visible'); // Adiciona animação nos primeiros
     }
 });
 
-// Função para mover o carrossel para a direita ou para a esquerda
-function moveCarousel(direction) {
-    // Remove a animação dos projetos atuais
-    for (let i = 0; i < 3; i++) {
-        const projectIndex = (currentIndex + i) % totalProjects;
-        projects[projectIndex].style.display = 'none'; // Esconde todos os projetos inicialmente
-        projects[projectIndex].classList.remove('project-visible'); // Remove a animação
+// Inicializa o display das especialidades
+especialidadesItems.forEach((item, index) => {
+    if (index >= 3) {
+        item.style.display = 'none'; // Esconde as especialidades 4, 5, 6
+    } else {
+        item.classList.add('project-visible'); // Adiciona animação nos primeiros
+    }
+});
+
+// Função para mover o carrossel (geral)
+function moveCarousel(direction, type) {
+    let items, totalItems, currentIndex;
+
+    // Verifica se o tipo é portfólio ou especialidades
+    if (type === 'portfolio') {
+        items = portfolioItems;
+        totalItems = totalPortfolioItems;
+        currentIndex = currentIndexPortfolio;
+    } else if (type === 'especialidades') {
+        items = especialidadesItems;
+        totalItems = totalEspecialidadesItems;
+        currentIndex = currentIndexEspecialidades;
     }
 
-    // Avançar para a direita
+    // Remove a animação e esconde os itens atuais
+    for (let i = 0; i < 3; i++) {
+        const itemIndex = (currentIndex + i) % totalItems;
+        items[itemIndex].style.display = 'none';
+        items[itemIndex].classList.remove('project-visible');
+    }
+
+    // Ajusta o índice com base na direção
     if (direction === 'direita') {
-        if (currentIndex === 3) { // Se estamos no conjunto 4, 5, 6
-            currentIndex = 0; // Vai para 1, 2, 3
-        } else {
-            currentIndex++; // Caso contrário, avança um índice
-        }
-    } 
-
-    // Retroceder para a esquerda
-    else if (direction === 'esquerda') {
-        if (currentIndex === 0) { // Se estamos no conjunto 1, 2, 3
-            currentIndex = 3; // Vai para 6, 5, 4
-        } else {
-            currentIndex--; // Caso contrário, retrocede um índice
-        }
+        currentIndex = (currentIndex + 3) >= totalItems ? 0 : currentIndex + 1;
+    } else if (direction === 'esquerda') {
+        currentIndex = (currentIndex - 3) < 0 ? totalItems - 3 : currentIndex - 1;
     }
 
-    // Exibe os 3 projetos atuais, com base no índice e adiciona animação
+    // Exibe os próximos 3 itens e adiciona a animação
     for (let i = 0; i < 3; i++) {
-        const projectIndex = (currentIndex + i) % totalProjects;
-        
-        // Exibe o projeto atual
-        projects[projectIndex].style.display = 'block';
-        projects[projectIndex].classList.add('project-visible'); // Adiciona a animação
+        const itemIndex = (currentIndex + i) % totalItems;
+        items[itemIndex].style.display = 'block';
+        items[itemIndex].classList.add('project-visible');
+    }
+
+    // Atualiza o índice atual para o tipo correspondente
+    if (type === 'portfolio') {
+        currentIndexPortfolio = currentIndex;
+    } else if (type === 'especialidades') {
+        currentIndexEspecialidades = currentIndex;
     }
 }
