@@ -96,6 +96,10 @@ header .btn-contato button:hover{
     
 
 }
+.btn-abrir-menu i:hover {
+    color: rgb(4, 0, 255);
+    
+}
 
 .menu-mobile {
     height: 100vh;
@@ -558,7 +562,7 @@ footer .line-footer h1 span{
     /* ESTILO DAS ESPECIALIDADES */
 
     section.especialidades {
-        padding: 40px 8%;
+        padding: 40px 4%;
     }
 
     section.especialidades .flex {
@@ -634,3 +638,42 @@ footer .line-footer h1 span{
     }
 
 }
+
+@media screen and (max-width: 390px){
+    /* ESTILO CABEÇALHO */
+
+    .logo img {
+        margin-right: 20px;
+    }
+
+    /* ESTILO DAS ESPECIALIDADES */
+
+    section.especialidades {
+        padding: 30px 2%;
+    }
+
+    .especialidades .especialidades-box i{
+        font-size: 55px;
+        display: flex; /* Define como flex container */
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+    }
+    .especialidades .especialidades-box h3{
+        text-align: center;
+    }
+
+    .especialidades .especialidades-box p{
+        text-align: center;
+    }
+
+
+    /* PORTFOLIO */
+    section.portfolio {
+        padding: 80px 2%;
+    }
+
+    section.portfolio .flex {
+        gap: 90px;
+    }
+}
+
