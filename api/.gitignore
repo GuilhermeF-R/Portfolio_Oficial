@@ -19,3 +19,21 @@ yarn.lock
 # Outras configurações de IDEs e editores
 .DS_Store
 Thumbs.db
+
+# Arquivos de build
+/dist
+/build
+
+# Arquivos de cache
+/.cache
+
+# Arquivos temporários de sistemas operacionais
+*.swp
+*.swo
+
+# Arquivos específicos de deploy
+*.tgz
+
+# Arquivos de backup
+*.bak
+*.tmp

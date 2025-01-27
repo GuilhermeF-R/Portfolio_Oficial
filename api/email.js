@@ -1,4 +1,6 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config(); // Certifique-se de carregar o dotenv no início do script
+
 
 module.exports = async (req, res) => {
     // Verifica se a requisição é POST
@@ -24,8 +26,8 @@ module.exports = async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: 'testerdeveloper45@gmail.com',
-                pass: 'autfbxrkxsauaiuf', // Não deixe isso exposto em produção
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
             },
         });
 
