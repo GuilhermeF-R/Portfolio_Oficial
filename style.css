@@ -330,7 +330,54 @@ section.portfolio {
 section.portfolio .flex{
     margin-top: 60px;
     justify-content: space-around;
+    gap: 40px;
 }
+
+.button-esquerda, .button-direita {
+    color: rgb(62, 104, 243);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 45px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.button-esquerda:hover i {
+    color: rgb(0, 56, 238);
+    transform: scale(1.10);
+}
+
+.button-direita:hover i {
+    color: rgb(0, 56, 238);
+    transform: scale(1.10);
+}
+
+.carrossel {
+    display: flex;
+    overflow: hidden;
+    transition:  4s;
+    gap: 40px;
+    padding: 23px 2%;
+    transition: transform 0.5s ease; /* Transição suave de 0.5s */
+}
+
+/* Animação de slide */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%); /* Ou -100% para vir de esquerda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.project-visible {
+    animation: slideIn 0.5s ease-in-out;
+}
+
 
 .img-port {
     width: 360px;

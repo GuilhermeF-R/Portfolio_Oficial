@@ -177,15 +177,37 @@
                 <h2 class="titulo">MEU <span>PORTFÓLIO</span>.</h2>
                 <div class="flex">
 
-                    <div class="img-port" style="background-image: url(Images/port1.gif);">
-                        <div class="overlay">Projeto 1</div>
+                    <!-- Botão de seta para a esquerda -->
+                    <div class="button-esquerda">
+                        <i class="bi bi-arrow-left-circle-fill" onclick="moveCarousel('esquerda')"></i>
                     </div>
-                    <div class="img-port" style="background-image: url(Images/port2.gif);">
-                        <div class="overlay">Projeto 2</div>
+
+                    <div class="carrossel">
+                        <div class="img-port" style="background-image: url(Images/port1.gif);">
+                            <div class="overlay">Projeto 1</div>
+                        </div>
+                        <div class="img-port" style="background-image: url(Images/port2.gif);">
+                            <div class="overlay">Projeto 2</div>
+                        </div>
+                        <div class="img-port" style="background-image: url(Images/port3.gif);">
+                            <div class="overlay">Projeto 3</div>
+                        </div>
+                        <!-- Projetos 4, 5 e 6 -->
+                        <div class="img-port" style="background-image: url(Images/tester.png);">
+                            <div class="overlay">Projeto 4</div>
+                        </div>
+                        <div class="img-port" style="background-image: url(Images/tester.png);">
+                            <div class="overlay">Projeto 5</div>
+                        </div>
+                        <div class="img-port" style="background-image: url(Images/tester.png);">
+                            <div class="overlay">Projeto 6</div>
+                        </div>  
                     </div>
-                    <div class="img-port" style="background-image: url(Images/port3.gif);">
-                        <div class="overlay">Projeto 3</div>
-                    </div>   
+
+                    <!-- Botão de seta para a direita -->
+                    <div class="button-direita">
+                        <i class="bi bi-arrow-right-circle-fill" onclick="moveCarousel('direita')"></i>
+                    </div>
 
                 </div><!--flex-->
 
@@ -241,6 +263,7 @@
 
     <!-- script menu mobile-->
     <script src="menu.js" defer></script>
+    <script src="carrossel.js" defer></script>
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
