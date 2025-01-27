@@ -324,7 +324,7 @@ section.sobre .flex{
 
 section.portfolio { 
     padding: 100px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.05);
 }
 
 section.portfolio .flex{
@@ -425,7 +425,7 @@ form .btn-enviar input[type=submit]:hover {
 
 footer {
     padding: 30px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.05);
 
  }
 
