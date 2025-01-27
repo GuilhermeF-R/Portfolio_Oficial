@@ -353,14 +353,6 @@ section.portfolio .flex{
     transform: scale(1.10);
 }
 
-.carrossel {
-    display: flex;
-    overflow: hidden;
-    transition:  4s;
-    gap: 40px;
-    padding: 23px 2%;
-    transition: transform 0.5s ease; /* Transição suave de 0.5s */
-}
 
 /* Animação de slide */
 @keyframes slideIn {
@@ -536,7 +528,7 @@ footer .line-footer h1 span{
 }
 
 
-@media screen and (max-width: 1380px){
+@media screen and (max-width: 980px){
     /* Classes gerais */
     .flex { 
         flex-direction: column;
@@ -650,18 +642,24 @@ footer .line-footer h1 span{
 
     /* PORTFOLIO */
     section.portfolio {
-        padding: 80px 8%;
+        padding: 170px 8%;
     }
 
     section.portfolio .flex {
+        margin-top: 100px;
         gap: 60px;
+        align-items: center;
     }
 
-    .img-port{
-        width: 100%;
-        max-width: 360px;
-        margin:0 auto;
+    .button-esquerda {
+        display: none;
+        
     }
+
+    .button-direita {
+        transform: rotate(90deg); /* Gira o ícone em 90 graus */
+    }
+
 
 
     /* ESTILO DO FORMULARIO DE CONTATO */
@@ -686,7 +684,7 @@ footer .line-footer h1 span{
 
 }
 
-@media screen and (max-width: 390px){
+@media screen and (max-width: 500px){
     /* ESTILO CABEÇALHO */
 
     .logo img {
@@ -715,12 +713,19 @@ footer .line-footer h1 span{
 
 
     /* PORTFOLIO */
-    section.portfolio {
-        padding: 80px 2%;
-    }
 
     section.portfolio .flex {
-        gap: 90px;
+        gap: 50px;
+        
+    }
+
+    .img-port{
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .button-direita , .button-esquerda {
+        display: none;
     }
 }
-
