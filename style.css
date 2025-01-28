@@ -568,6 +568,59 @@ form .btn-enviar input[type=submit]:hover {
     transition: .2s;
     transform: scale(1.05);
  }
+/* Mensagem de erro */
+#error-message {
+    display: none;
+    color: rgb(255, 255, 255); /* Cor do texto */
+    background-color: rgb(248, 0, 0); /* Cor de fundo */
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    z-index: 2;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%); /* Para centralizar horizontalmente */
+    width: 50%;
+}
+
+/* Botão de fechar */
+#error-message button {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#error-message button:hover {
+    color: rgb(248, 141, 147);
+    transform: scale(1.20);
+}
+
+/* Overlay */
+#overlay-error {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.57); /* Cor semitransparente */
+    backdrop-filter: blur(45px); /* Efeito de desfoque */
+    z-index: 1; /* Para garantir que o overlay fique abaixo da mensagem de erro */
+}
+
+
 
  /* ESTILO DO RODAPÉ */
 

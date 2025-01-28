@@ -20,7 +20,6 @@
     <title>Portfólio Online</title>
 </head>
 <body>
-
     <header>
         <div class="interface hidden">
             <div class="logo">
@@ -67,7 +66,6 @@
 
             </div><!--menu-mobile-->
             <div class="overlay-menu" id="overlay-menu"></div><!--overlay-menu-->
-
         </div><!--interface-->
 
     </header>
@@ -392,8 +390,17 @@
                     <textarea name="message" id="message"  placeholder="Escreva sua mensagem:" ></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>
+                <!-- Área de mensagens de erro -->
+                <div id="overlay-error"></div>
+
+                <div id="error-message">
+                    <span id="error-text"></span>
+                    <button id="close-error" aria-label="Fechar">X</button>
+                </div>
 
             </div><!--interface-->
+            
+
         </section><!--contato-->
 
     </main>
@@ -440,35 +447,79 @@
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            // Coletar os dados do formulário
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value
-            };
-    
-            // Enviar os dados para o servidor
-            fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', { // Verifique se essa URL está correta
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert(data);  // Exibe a resposta do servidor
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                alert('Erro ao enviar o e-mail');
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const errorMessage = document.getElementById('error-message');
+            const overlayError = document.getElementById('overlay-error');
+            const errorText = document.getElementById('error-text');
+            const closeErrorButton = document.getElementById('close-error');
+        
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+        
+                // Limpa mensagens de erro anteriores
+                errorMessage.style.display = 'none';
+                overlayError.style.display = 'none';
+        
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    phone: document.getElementById('phone').value.trim(),
+                    message: document.getElementById('message').value.trim(),
+                };
+        
+                if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+                    showError('Por favor, preencha todos os campos.');
+                    return;
+                }
+        
+                fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Erro ${response.status}: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then((data) => {
+                    alert('Mensagem enviada com sucesso!');
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('Erro:', error);
+                    showError(`Erro ao enviar o e-mail: ${error.message}`);
+                });
+            });
+        
+            // Função para exibir a mensagem de erro e o overlay
+            function showError(message) {
+                errorText.textContent = message;
+                errorMessage.style.display = 'block';
+                overlayError.style.display = 'block';
+        
+                // Esconde a mensagem e o overlay automaticamente após 8 segundos
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                    overlayError.style.display = 'none';
+                }, 8000);
+            }
+        
+            // Evento para fechar a mensagem de erro e o overlay
+            closeErrorButton.addEventListener('click', () => {
+                errorMessage.style.display = 'none';
+                overlayError.style.display = 'none';
             });
         });
-    </script>    
+        
+        
+    </script>
+    
+    
     <!-- Configuração e inicialização do Lenis: rolagem suave -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
