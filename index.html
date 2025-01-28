@@ -20,7 +20,7 @@
 <body>
 
     <header>
-        <div class="interface">
+        <div class="interface hidden">
             <div class="logo">
                 <a href="#">
                     <img src="Images/Devgferreira.png"  draggable="false" oncontextmenu="return false;" alt="Logo Do Portfólio">
@@ -72,7 +72,7 @@
 
     <main>
 
-        <section class="topo-do-site">
+        <section class="topo-do-site hidden" >
             <div class="interface">
                 <div class="flex">
                     
@@ -107,7 +107,7 @@
             </div><!--interface-->
         </section><!--topo-do-site-->
 
-        <section class="especialidades" id="section3">
+        <section class="especialidades hidden" id="section3">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>HABILIDADES</span>.</h2>
                 <div class="flex">
@@ -266,7 +266,7 @@
             </div><!--interface-->
         </section> <!--especialidades-->
 
-        <section class="sobre" id="section2">
+        <section class="sobre hidden" id="section2">
             <div class="interface">
                 <div class="flex">
 
@@ -289,7 +289,7 @@
             </div><!--interface-->
         </section> <!--sobre-->
 
-        <section class="portfolio" id="section4">
+        <section class="portfolio hidden" id="section4">
             <div class="interface">
                 <h2 class="titulo">MEU <span>PORTFÓLIO</span>.</h2>
                 <div class="flex">
@@ -342,7 +342,7 @@
 
         </section><!--portfolio-->
 
-        <section class="contato" id="section5">
+        <section class="contato hidden" id="section5">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO</span>!</h2>
 
@@ -389,11 +389,13 @@
     <!-- SCRIPTS -->
 
     <!-- script menu mobile-->
-    <script src="menu.js" defer></script>
+    <script src="menu.js" defer ></script>
     <!-- script carrosel -->
-    <script src="carrossel.js" defer></script>
+    <script src="carrossel.js" defer ></script>
     <!-- script lenis rolagem suave (script) -->
     <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <!--  script animação de rolagem -->
+    <script src="scrollanimation.js" defer ></script>
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>

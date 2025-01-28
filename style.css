@@ -10,6 +10,20 @@
     scroll-behavior: smooth;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(20px);
+    transition: all 1.6s;
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transition: all 1.8s;
+    transform: translateX(0);
+}
+
 
 body {
     background-color: #000;
