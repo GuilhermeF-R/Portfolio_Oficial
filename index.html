@@ -386,7 +386,7 @@
                 <form id="contact-form" method="POST">
                     <input type="text" name="name" id="name" placeholder="Seu nome:" >
                     <input type="email" name="email" id="email" placeholder="Seu e-mail:" >
-                    <input type="text" name="phone" id="phone" placeholder="Seu celular:" >
+                    <input type="text" name="phone" id="phone" required pattern="^\d{10,11}$" placeholder="Seu celular:" >
                     <textarea name="message" id="message"  placeholder="Escreva sua mensagem:" ></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>
@@ -453,6 +453,7 @@
             const overlayError = document.getElementById('overlay-error');
             const errorText = document.getElementById('error-text');
             const closeErrorButton = document.getElementById('close-error');
+            const phoneInput = document.getElementById('phone');
         
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
@@ -464,12 +465,20 @@
                 const formData = {
                     name: document.getElementById('name').value.trim(),
                     email: document.getElementById('email').value.trim(),
-                    phone: document.getElementById('phone').value.trim(),
+                    phone: phoneInput.value.trim(),
                     message: document.getElementById('message').value.trim(),
                 };
         
+                // Verifica se algum campo obrigatório está vazio
                 if (!formData.name || !formData.email || !formData.phone || !formData.message) {
                     showError('Por favor, preencha todos os campos.');
+                    return;
+                }
+        
+                // Verifica se o telefone segue o padrão
+                const phonePattern = /^\d{10,11}$/;
+                if (!phonePattern.test(formData.phone)) {
+                    showError('O campo de telefone deve conter apenas números e ter 10 ou 11 dígitos.');
                     return;
                 }
         
@@ -517,8 +526,6 @@
                 overlayError.style.display = 'none';
             });
         });
-        
-        
         
     </script>
     
