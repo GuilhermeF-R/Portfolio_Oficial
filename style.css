@@ -643,15 +643,15 @@ form .btn-enviar input[type=submit]:hover {
 }
 
 #overlay-success .message {
-    background-color: #4CAF50;
-    color: white;
     display: none;
+    color: rgb(0, 0, 0); /* Cor do texto */
+    background-color: rgb(255, 255, 255); /* Cor de fundo */
     padding: 10px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(223, 181, 103);
     border-radius: 5px;
     margin-top: 10px;
     font-family: Arial, sans-serif;
-    z-index: 2;
+    z-index: 5;
     text-align: center;
     position: fixed;
     top: 20%;
@@ -673,6 +673,7 @@ form .btn-enviar input[type=submit]:hover {
     cursor: pointer;
     transition: 0.5s;
 }
+
 
 #overlay-success button:hover {
     background-color: #388e3c;
