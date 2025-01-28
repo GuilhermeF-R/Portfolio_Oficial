@@ -676,7 +676,7 @@ form .btn-enviar input[type=submit]:hover {
 #success-message button {
     background: none;
     border: none;
-    color: rgb(255, 255, 255);
+    color: rgb(1, 68, 10); /* Cor do texto */
     font-size: 20px;
     font-weight: bold;
     position: absolute;
@@ -688,7 +688,7 @@ form .btn-enviar input[type=submit]:hover {
 
 
 #success-message button:hover {
-    color:rgb(1, 68, 10);
+    color:rgb(37, 116, 48);
     transform: scale(1.20);
 }
 
@@ -905,6 +905,22 @@ footer .line-footer h1 span{
         padding: 50px 8%;
     }
 
+    #success-message {
+        width: 80%;  
+    }
+
+    #success-message i {
+        right: 90%;
+    }
+
+    #error-message {
+        width: 80%; 
+    }
+
+    #error-message i {
+        right: 90%;
+    }
+
     /* RODAPÉ */
 
     footer.flex {
@@ -964,5 +980,38 @@ footer .line-footer h1 span{
 
     .button-direita , .button-esquerda {
         display: none;
+    }
+
+    /* Mensagem de erro */
+    /* contato form */
+    #error-message {
+        width: 90%;
+    }
+
+    #error-message i {
+        right: 90%;
+        top: -20px;
+    }
+    
+    /* Botão de fechar */
+    #error-message button {
+        right: 20px;
+        top: -20px;
+        color:#fff;
+    }
+
+    #success-message {
+        width: 90%;  
+    }
+
+    #success-message i {
+        right: 90%;
+        top: -20px;
+    }
+    
+    #success-message button {
+        right: 20px;
+        top: -20px;
+        color:#fff;
     }
 }
