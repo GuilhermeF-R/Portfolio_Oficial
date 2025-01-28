@@ -644,7 +644,7 @@ form .btn-enviar input[type=submit]:hover {
 
 #success-message {
     display: none;
-    color: rgb(255, 255, 255); /* Cor do texto */
+    color: rgb(1, 68, 10); /* Cor do texto */
     background-color: rgb(21, 255, 0); /* Cor de fundo */
     padding: 10px;
     border: 1px solid rgb(59, 126, 4);
@@ -659,6 +659,7 @@ form .btn-enviar input[type=submit]:hover {
     transform: translateX(-50%); /* Para centralizar horizontalmente */
     width: 50%; 
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.77);
+    weight: bold;
 }
 
 #success-message i {
@@ -687,7 +688,7 @@ form .btn-enviar input[type=submit]:hover {
 
 
 #success-message button:hover {
-    background-color:rgb(5, 71, 8);
+    color:rgb(1, 68, 10);
     transform: scale(1.20);
 }
 
