@@ -577,7 +577,6 @@ form .btn-enviar input[type=submit]:hover {
     border: 1px solid rgb(223, 181, 103);
     border-radius: 5px;
     margin-top: 10px;
-    
     font-family: Arial, sans-serif;
     z-index: 2;
     text-align: center;
@@ -648,7 +647,7 @@ form .btn-enviar input[type=submit]:hover {
     color: white;
     display: none;
     padding: 10px;
-    border: 1px solid rgb(223, 181, 103);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
     margin-top: 10px;
     font-family: Arial, sans-serif;
