@@ -642,12 +642,12 @@ form .btn-enviar input[type=submit]:hover {
     z-index: 1; /* Para garantir que o overlay fique abaixo da mensagem de erro */
 }
 
-#overlay-success .message {
+#success-message {
     display: none;
-    color: rgb(0, 0, 0); /* Cor do texto */
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    background-color: rgb(0, 89, 255); /* Cor de fundo */
     padding: 10px;
-    border: 1px solid rgb(223, 181, 103);
+    border: 1px solid rgb(0, 60, 255);
     border-radius: 5px;
     margin-top: 10px;
     font-family: Arial, sans-serif;
@@ -660,11 +660,21 @@ form .btn-enviar input[type=submit]:hover {
     width: 50%; 
 }
 
+#success-message i {
+    color: rgb(0, 26, 255);
+    font-size: 21px;
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    right: 95%;
+    text-align:center;
+}
 
-#overlay-success button {
+
+#success-message button {
     background: none;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: bold;
     position: absolute;
@@ -675,8 +685,8 @@ form .btn-enviar input[type=submit]:hover {
 }
 
 
-#overlay-success button:hover {
-    background-color: #388e3c;
+#success-message button:hover {
+    background-color:rgb(107, 233, 255);
     transform: scale(1.20);
 }
 
