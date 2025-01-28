@@ -390,12 +390,22 @@
                     <textarea name="message" id="message"  placeholder="Escreva sua mensagem:" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>
+
                 <!-- Área de mensagens de erro -->
                 <div id="overlay-error"></div>
 
                 <div id="error-message">
+                    <i class="bi bi-exclamation-square-fill"></i>
                     <span id="error-text"></span>
                     <button id="close-error" aria-label="Fechar">X</button>
+                </div>
+                
+                <!-- Mensagem de sucesso -->
+                <div id="overlay-success" class="overlay">
+                    <div id="success-message" class="message">
+                        <span id="success-text"></span>
+                        <button id="close-success">Fechar</button>
+                    </div>
                 </div>
 
             </div><!--interface-->
@@ -447,41 +457,50 @@
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
+    
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contact-form');
             const errorMessage = document.getElementById('error-message');
             const overlayError = document.getElementById('overlay-error');
             const errorText = document.getElementById('error-text');
+            const successMessage = document.getElementById('success-message');  // Novo elemento para a mensagem de sucesso
+            const overlaySuccess = document.getElementById('overlay-success');  // Novo elemento para o overlay de sucesso
+            const successText = document.getElementById('success-text');  // Novo para o texto de sucesso
             const closeErrorButton = document.getElementById('close-error');
+            const closeSuccessButton = document.getElementById('close-success');  // Botão para fechar a mensagem de sucesso
             const phoneInput = document.getElementById('phone');
-        
+    
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
-        
+    
                 // Limpa mensagens de erro anteriores
                 errorMessage.style.display = 'none';
                 overlayError.style.display = 'none';
-        
+    
+                // Limpa mensagens de sucesso anteriores
+                successMessage.style.display = 'none';
+                overlaySuccess.style.display = 'none';
+    
                 const formData = {
                     name: document.getElementById('name').value.trim(),
                     email: document.getElementById('email').value.trim(),
                     phone: phoneInput.value.trim(),
                     message: document.getElementById('message').value.trim(),
                 };
-        
+    
                 // Verifica se algum campo obrigatório está vazio
                 if (!formData.name || !formData.email || !formData.phone || !formData.message) {
                     showError('Por favor, preencha todos os campos.');
                     return;
                 }
-        
+    
                 // Verifica se o telefone segue o padrão
                 const phonePattern = /^\d{10,11}$/;
                 if (!phonePattern.test(formData.phone)) {
                     showError('O campo de telefone deve conter apenas NÚMEROS e ter 10 ou 11 dígitos.');
                     return;
                 }
-        
+    
                 fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', {
                     method: 'POST',
                     headers: {
@@ -498,7 +517,7 @@
                     return response.text();
                 })
                 .then((data) => {
-                    alert('Mensagem enviada com sucesso!');
+                    showSuccess('Mensagem enviada com sucesso!');
                     form.reset();
                 })
                 .catch((error) => {
@@ -506,24 +525,43 @@
                     showError(error.message);
                 });
             });
-        
+    
             // Função para exibir a mensagem de erro e o overlay
             function showError(message) {
                 errorText.textContent = message;
                 errorMessage.style.display = 'block';
                 overlayError.style.display = 'block';
-        
+    
                 // Esconde a mensagem e o overlay automaticamente após 8 segundos
                 setTimeout(() => {
                     errorMessage.style.display = 'none';
                     overlayError.style.display = 'none';
                 }, 8000);
             }
-        
+    
+            // Função para exibir a mensagem de sucesso e o overlay
+            function showSuccess(message) {
+                successText.textContent = message;
+                successMessage.style.display = 'block';
+                overlaySuccess.style.display = 'block';
+    
+                // Esconde a mensagem e o overlay automaticamente após 8 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    overlaySuccess.style.display = 'none';
+                }, 8000);
+            }
+    
             // Evento para fechar a mensagem de erro e o overlay
             closeErrorButton.addEventListener('click', () => {
                 errorMessage.style.display = 'none';
                 overlayError.style.display = 'none';
+            });
+    
+            // Evento para fechar a mensagem de sucesso e o overlay
+            closeSuccessButton.addEventListener('click', () => {
+                successMessage.style.display = 'none';
+                overlaySuccess.style.display = 'none';
             });
         });
         
