@@ -658,7 +658,7 @@ form .btn-enviar input[type=submit]:hover {
     left: 50%;
     transform: translateX(-50%); /* Para centralizar horizontalmente */
     width: 50%; 
-    box-shadow: 0 0 40px 10px rgb(0, 255, 0);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.77);
 }
 
 #success-message i {
