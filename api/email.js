@@ -27,14 +27,19 @@ export default async (req, res) => {
             return res.status(400).send('Todos os campos são obrigatórios: nome, e-mail, telefone e mensagem.');
         }
 
-         // Remove todos os caracteres não numéricos, mas mantém os parênteses, espaço e hífen
-         const cleanedPhone = phone.replace(/[^\d\(\)\-\s]/g, ''); // Remove tudo, exceto números, parênteses, hífen e espaço
+        // Remove todos os caracteres não numéricos (excluindo os parênteses, espaço e hífen)
+        const cleanedPhone = phone.replace(/\D/g, ''); // Remove tudo que não for número
 
-         // Verifique se o número de telefone está no formato correto
-         const phoneRegex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;  // Formato: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
-         if (!phoneRegex.test(cleanedPhone)) {
-             return res.status(400).send('O campo de telefone deve seguir o formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.');
-         }
+        // Verifique se o número de telefone tem 10 ou 11 dígitos
+        if (cleanedPhone.length !== 10 && cleanedPhone.length !== 11) {
+            return res.status(400).send('O telefone deve conter exatamente 10 ou 11 dígitos.');
+        }
+
+        // Formato para verificar (com parênteses, espaço e hífen, se necessário)
+        const phoneRegex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
+        if (!phoneRegex.test(phone)) {
+            return res.status(400).send('O campo de telefone deve seguir o formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.');
+        }
 
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
