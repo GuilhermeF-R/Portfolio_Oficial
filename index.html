@@ -475,10 +475,19 @@
                     return;
                 }
         
-                // Verifica se o telefone segue o padrão
-                const phonePattern = /^\d{10,11}$/;
+                // Limpar o telefone, removendo tudo, exceto os números
+                const cleanedPhone = formData.phone.replace(/\D/g, ''); // Remove tudo que não for número
+        
+                // Verifica se o telefone tem 10 ou 11 dígitos
+                if (cleanedPhone.length !== 10 && cleanedPhone.length !== 11) {
+                    showError('O campo de telefone deve conter exatamente 10 ou 11 dígitos.');
+                    return;
+                }
+        
+                // Verifica se o telefone segue o formato correto (com parênteses, espaço e hífen)
+                const phonePattern = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
                 if (!phonePattern.test(formData.phone)) {
-                    showError('O campo de telefone deve conter apenas números e ter 10 ou 11 dígitos.');
+                    showError('O campo de telefone deve seguir o formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.');
                     return;
                 }
         
