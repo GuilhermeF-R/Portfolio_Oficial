@@ -59,7 +59,24 @@ h2.titulo {
 
 h2.titulo span{
     color: rgb(73, 112, 241);
+    position: relative;
 }
+
+@keyframes digitando{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width:calc(100% + 10px);
+    } 
+}
+
+@keyframes cursor{
+    0%{
+        border-left: 2px solid #000;
+    }
+}
+
 
 /* estilo do cabeçalho */
 header{
@@ -237,6 +254,43 @@ section.topo-do-site .flex {
     }
 }
 
+.notification-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    justify-content: right;
+    width: 100%;
+    background-color: rgb(62, 104, 243); /* Cor de fundo da faixa */
+    color: #fff;
+    bottom: -16.5%; /* ajuste conforme a altura da barra de notificação */
+    padding: 10px;
+    font-size: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    /* ocultar a barra de rolagem horizontal */
+    overflow: hidden; /* Oculta a barra de rolagem horizontal */
+}
+
+.notification-bar .tech-icons i {
+    font-size: 27px; /* Ajusta o tamanho dos ícones */
+    margin: 0 30px; /* Adiciona espaçamento entre os ícones */
+    color:  rgb(31, 56, 138); /* Cor padrão */
+}
+
+.tech-icons p {
+    font-size: 10px;
+    text-align: center; /* Centraliza o texto */ 
+    color:  rgb(31, 56, 138); /* Cor padrão */
+    font-weight: bold;
+}
+   
+
+
+.tech-icons {
+    display: flex; /* Alinha os ícones na horizontal */
+    justify-content: flex-end; /* Move os ícones para a direita */
+    transition: transform 0.5s linear; /* Transição suave para o movimento */
+    width: 150%; /* Garante que a barra ocupe toda a largura */
+}
 
 main .btn-contato button:hover{
     box-shadow: 0px 0px 12px rgb(73, 112, 241);
@@ -248,7 +302,7 @@ main .btn-contato button:hover{
 /* ESTILO DAS ESPECIALIDADES */
 
 section.especialidades {
-    padding: 145px 4%;
+    padding: 238px 4%;
 }
 
 section.especialidades .flex {
@@ -277,6 +331,43 @@ section.especialidades .flex {
     font-size: 28px;
     margin: 15px 0;
 }
+
+.especialidades h2.titulo span::before {
+    content: "";
+    color: rgb(73, 112, 241);
+    animation: skillpalavras 20s infinite;
+}
+
+.especialidades h2.titulo span::after {
+    content: "";
+    position: absolute;
+    height: 125%;
+    border-left: 2px solid rgb(73, 112, 241);
+    right: -5px;
+    animation: cursor .8s infinite, digitando 20s steps(10) infinite;
+    top: -5.8px;
+    width:calc(100% + 10px);
+    background-color: #000;
+}
+
+@keyframes skillpalavras{
+    0%, 20%{
+        content: "SKILLS";
+    }
+    21%, 40%{
+        content: "HABILIDADES";
+    }
+    41%, 60%{
+        content: "COMPETÊNCIAS";
+    }
+    61%, 80%{
+        content: "QUALIFICAÇÕES";
+    }
+    81%, 100%{
+        content: "ESPECIALIDADES";
+    }
+}
+
 
 /* ESTILO SOBRE MIM */
 
@@ -601,6 +692,10 @@ footer .line-footer h1 span{
 
     section.topo-do-site .flex {
         gap: 60px;
+    }
+
+    .notification-bar{
+        display: none;
     }
 
     .topo-do-site .flex {
