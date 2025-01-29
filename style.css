@@ -593,10 +593,13 @@ section.portfolio .flex{
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: .2s;
 }
 
 .btn-abrir-projeto:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(109, 158, 248);
 }
 
 /* ESTILO DO FORMULARIO DE CONTATO */
@@ -841,6 +844,17 @@ footer .line-footer h1 span{
     color: rgb(73, 112, 241);
 }
 
+@media screen and (max-width: 1280px){
+    /* Estilos da Modal */
+    .modal-content {
+        height: 70%;
+    }
+
+    .btn-abrir-projeto {
+        margin-top: 200px;
+    }
+}
+
 
 @media screen and (max-width: 980px){
     /* Classes gerais */
@@ -987,84 +1001,19 @@ footer .line-footer h1 span{
     }
 
     /* Estilos da Modal */
-.modal {
-    display: none; /* Escondido por padrão */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
-}
 
-.modal-content {
-    background: linear-gradient(to top, rgb(255, 255, 255), rgb(255, 255, 255)); /* Azul claro para branco */
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 40%;
-    max-width: 800px; /* Aumentei o tamanho para acomodar a imagem */
-    position: relative;
-}
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+    }
 
-.modal-flex {
-    display: flex;
-    gap: 20px;
-}
+    #modal-description {
+        margin-top: 50px; /* Espaço de 10px entre o título e a descrição */
+    }
 
-.modal-img {
-    flex: 1;
-}
-
-.modal-img img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.modal-text {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: top-center;
-}
-
-#modal-description {
-    margin-top: 10px; /* Espaço de 10px entre o título e a descrição */
-}
-
-.close-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-    color: black;
-    text-decoration: none;
-}
-
-.btn-abrir-projeto {
-    display: inline-block;
-    text-align: center;
-    margin-top: 90px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn-abrir-projeto:hover {
-    background-color: #0056b3;
-}
-
-
+    .btn-abrir-projeto {
+        margin-top: 290px;
+    }
 
     /* ESTILO DO FORMULARIO DE CONTATO */
 
@@ -1154,6 +1103,77 @@ footer .line-footer h1 span{
         display: none;
     }
 
+    .modal {
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+        backdrop-filter: blur(10px); /* Efeito de desfoque */
+    }
+
+    .modal-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 10px; /* Reduzir o padding para melhor aproveitamento do espaço */
+        background: linear-gradient(270deg,rgba(91, 2, 255, 0.17),rgba(7, 23, 255, 0.17),rgba(2, 1, 68, 0.17)); /* Gradiente de azul escuro para branco */
+        background-size: 400% 400%; /* Tamanho do gradiente */
+        animation: gradientAnimation 12s ease infinite; /* Animação do gradiente */
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+
+    .modal-text {
+        justify-content: center;
+        align-items: center; /* Centraliza o texto horizontalmente */
+        font-size: 20px; /* Reduzir o tamanho da fonte para caber melhor */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #modal-title{
+        margin-top: 40px; /* Ajustar o espaçamento */
+        margin-left: -140px;
+        color: #fff;
+    }
+
+    #modal-description {
+        margin-top: 20px; /* Ajustar o espaçamento */
+        margin-left: -140px;
+        padding: 0 10px; /* Adicionar padding para evitar que o texto encoste nas bordas */
+        color: #fff;
+    }
+
+    .btn-abrir-projeto {
+        margin-top: 430px; /* Ajustar o espaçamento do botão */
+        margin-left: -125px;
+        width: 100%; /* Faz o botão ocupar a largura total */
+        padding: 10px; /* Ajustar o padding do botão */
+    }
+
+    .modal-img img {
+        display: none; /* Esconder a imagem em dispositivos móveis */
+    }
+
+    .close-modal {
+        font-size: 50px;
+        transition: .2s;
+    }
+    .close-modal:hover {
+        font-size: 50px;
+        color: red;
+        transform: scale(1.05);
+    }
+
     /* Mensagem de erro */
     /* contato form */
     #error-message {
@@ -1185,5 +1205,30 @@ footer .line-footer h1 span{
         right: 20px;
         top: -20px;
         color:#fff;
+    }
+}
+@media screen and (max-width: 395px){
+    /* portfolio modal adjust */
+    #modal-title{
+        margin-top: 50px; /* Ajustar o espaçamento */
+        margin-left: -100px;
+    }
+
+    #modal-description {
+        margin-top: 20px; /* Ajustar o espaçamento */
+        margin-left: -100px;
+    }
+}
+@media screen and (max-width: 320px){
+    /* portfolio modal adjust */
+    #modal-title{
+        margin-top: 50px; /* Ajustar o espaçamento */
+        margin-left: -80px;
+    }
+
+    #modal-description {
+        margin-top: 20px; /* Ajustar o espaçamento */
+        margin-left: -80px;
+        
     }
 }
