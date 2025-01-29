@@ -52,7 +52,7 @@ function moveCarousel(direction, type) {
     if (direction === 'direita') {
         currentIndex = (currentIndex + 3) >= totalItems ? 0 : currentIndex + 1;
     } else if (direction === 'esquerda') {
-        currentIndex = (currentIndex - 3) < 0 ? totalItems - 3 : currentIndex - 1;
+        currentIndex = (currentIndex - 1) < 0 ? totalItems - 3 : currentIndex - 1;
     }
 
     // Exibe os próximos 3 itens e adiciona a animação
