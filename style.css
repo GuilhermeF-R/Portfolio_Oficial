@@ -1014,6 +1014,11 @@ footer .line-footer h1 span{
         margin-top: 290px;
     }
 
+    .modal-img img {
+        width: 81%;  
+        height: 97%;
+    }
+
     /* ESTILO DO FORMULARIO DE CONTATO */
 
     section.contato { 
@@ -1052,7 +1057,40 @@ footer .line-footer h1 span{
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 750px){
+     /* Estilos da Modal */
+
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+        
+    }
+
+    #modal-title {
+        margin-top: 0px; /* Espaço de 10px entre o título e a descrição */
+        margin-left: 0px;
+    }
+
+    #modal-description {
+        margin-top: 40px; /* Espaço de 10px entre o título e a descrição */
+    }
+
+    .btn-abrir-projeto {
+        margin-top: 100px;
+    }
+
+    .modal-img img {
+        width: 60%;  
+        height: 85%;
+    }
+    .modal-text {
+        justify-content: center;
+        align-items: center; /* Centraliza o texto horizontalmente */
+        font-size: 20px; /* Reduzir o tamanho da fonte para caber melhor */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+@media screen and (max-width: 600px){
     /* ESTILO CABEÇALHO */
 
     .logo img {
