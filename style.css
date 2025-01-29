@@ -862,8 +862,6 @@ footer .line-footer h1 span{
         flex-direction: column;
     }
     
-   
-
     h2.titulo{
         font-size: 34px;
         line-height: 30px;
@@ -1210,16 +1208,20 @@ footer .line-footer h1 span{
         color:#fff;
     }
 }
-@media screen and (max-width: 412px){
+@media screen and (max-width: 450px){
     /* portfolio modal adjust */
     #modal-title{
         margin-top: 50px; /* Ajustar o espaçamento */
-        margin-left: -100px;
+        margin-left: -110px;
     }
 
     #modal-description {
         margin-top: 20px; /* Ajustar o espaçamento */
-        margin-left: -100px;
+        margin-left: -110px;
+    }
+    .btn-abrir-projeto {
+        margin-top: 300px; /* Ajustar o espaçamento do botão */
+        margin-left: -110px;
     }
 }
 @media screen and (max-width: 395px){
@@ -1231,6 +1233,10 @@ footer .line-footer h1 span{
 
     #modal-description {
         margin-top: 20px; /* Ajustar o espaçamento */
+        margin-left: -100px;
+    }
+    .btn-abrir-projeto {
+        margin-top: 230px; /* Ajustar o espaçamento do botão */
         margin-left: -100px;
     }
 }
@@ -1245,5 +1251,9 @@ footer .line-footer h1 span{
         margin-top: 20px; /* Ajustar o espaçamento */
         margin-left: -80px;
         
+    }
+    .btn-abrir-projeto {
+        margin-top: 20px; /* Ajustar o espaçamento do botão */
+        margin-left: -80px;
     }
 }
