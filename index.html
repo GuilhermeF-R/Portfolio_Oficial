@@ -337,24 +337,24 @@
                     </div>
 
                         <div class="img-port" style="background-image: url(Images/port1.gif);">
-                            <div class="overlay">Projeto 1</div>
+                            <div class="overlay">Duque</div>
                         </div>
                         <div class="img-port" style="background-image: url(Images/port2.gif);">
-                            <div class="overlay">Projeto 2</div>
+                            <div class="overlay">Barcode-Creator</div>
                         </div>
                         <div class="img-port" style="background-image: url(Images/port3.gif);">
-                            <div class="overlay">Projeto 3</div>
+                            <div class="overlay">Audiobook-Service</div>
                         </div>
 
                         <!-- Projetos 4, 5 e 6 -->
                         <div class="img-port" style="background-image: url(Images/port4.gif);">
-                            <div class="overlay">Projeto 4</div>
+                            <div class="overlay">Hashtaurante</div>
                         </div>
                         <div class="img-port" style="background-image: url(Images/port5.gif);">
-                            <div class="overlay">Projeto 5</div>
+                            <div class="overlay">Profile-Card</div>
                         </div>
                         <div class="img-port" style="background-image: url(Images/port6.gif);">
-                            <div class="overlay">Projeto 6</div>
+                            <div class="overlay">Notepad</div>
                         </div>
 
                         <!-- Projetos 7, 8 e 9 (add em breve)-->
@@ -415,6 +415,23 @@
 
         </section><!--contato-->
 
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-flex">
+                    <div class="modal-img">
+                        <img id="modal-image" src="" alt="Imagem do Projeto">
+                    </div>
+                    <div class="modal-text">
+                        <h2 id="modal-title">Título do Projeto</h2>
+                        <p id="modal-description">Descrição do projeto...</p>
+                        <a id="modal-link" href="#" target="_blank" class="btn-abrir-projeto">Abrir Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
@@ -456,6 +473,8 @@
     <script src="scrollanimation.js" defer ></script>
     <!-- animação da barra moveicons -->
     <script src="moveicons.js"></script>
+    <!-- script do modal de projetos -->
+     <script src="modal.js"></script>
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
