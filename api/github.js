@@ -1,29 +1,77 @@
+// Função para buscar a descrição (About) do repositório no GitHub
 async function fetchGitHubAbout(repoName) {
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
-    console.log("Fazendo requisição para:", apiUrl); // Log da URL
+    const token = process.env.MYTOKEN;  // Obtendo o token da variável de ambiente
 
     try {
         const response = await fetch(apiUrl, {
             headers: {
                 Accept: "application/vnd.github.v3+json",
-                Authorization: `Bearer ${process.env.MYTOKEN}`
+                Authorization: `Bearer ${token}`  // Usando o token para autenticação
             }
         });
 
-        console.log("Resposta da API:", response.status, response.statusText); // Log do status da resposta
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error("Erro na resposta:", errorText); // Log do erro detalhado
-            throw new Error("Não foi possível carregar a descrição.");
-        }
+        if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
 
         const data = await response.json();
-        console.log("Dados recebidos:", data); // Log dos dados recebidos
-
         return data.description || "Nenhuma descrição disponível.";
     } catch (error) {
         console.error("Erro ao buscar descrição do GitHub:", error);
         return "Erro ao carregar a descrição.";
     }
 }
+
+// O restante do código permanece o mesmo, incluindo os ouvintes de eventos para o modal.
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalLink = document.getElementById('modal-link');
+    const modalImage = document.getElementById('modal-image');
+    const closeModal = document.querySelector('.close-modal');
+
+    const viewCounts = {};
+
+    function openModal(title, description, link, imageUrl) {
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalLink.href = link;
+        modalImage.src = imageUrl;
+        modal.style.display = 'block';
+
+        if (!viewCounts[title]) {
+            viewCounts[title] = 0;
+        }
+        viewCounts[title]++;
+        console.log(`O projeto "${title}" foi aberto ${viewCounts[title]} vezes.`);
+    }
+
+    function closeModalHandler() {
+        modal.style.display = 'none';
+    }
+
+    closeModal.addEventListener('click', closeModalHandler);
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModalHandler();
+        }
+    });
+
+    const portfolioImages = document.querySelectorAll('.img-port');
+
+    portfolioImages.forEach((img) => {
+        img.addEventListener('click', async () => {
+            const overlayText = img.querySelector('.overlay').textContent.trim();
+            const repoName = `${overlayText}`;
+            const projectTitle = `Projeto: ${overlayText}`;
+            const projectLink = `https://github.com/GuilhermeF-R/${repoName}`;
+            const projectImage = img.style.backgroundImage.slice(5, -2);
+
+            openModal(projectTitle, 'Carregando descrição...', projectLink, projectImage);
+
+            const projectDescription = await fetchGitHubAbout(repoName);
+            openModal(projectTitle, projectDescription, projectLink, projectImage);
+        });
+    });
+});
