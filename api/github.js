@@ -1,4 +1,6 @@
 // Função para buscar a descrição (About) do repositório no GitHub
+export { fetchGitHubAbout };
+
 console.log("Buscando repositório:", repoName);
 async function fetchGitHubAbout(repoName) {
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;

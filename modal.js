@@ -1,3 +1,5 @@
+import { fetchGitHubAbout } from './api/github.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modal-title');
