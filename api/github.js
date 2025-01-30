@@ -1,8 +1,9 @@
 // Função para buscar a descrição (About) do repositório no GitHub
-async function fetchGitHubAbout(repoName) {
+export async function fetchGitHubAbout(repoName) {
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
     const MYTOKEN = process.env.MYTOKEN; // Acessa a variável de ambiente
-
+    console.log("Token:", MYTOKEN); // Verifique se o token está sendo carregado
+    
     try {
         const response = await fetch(apiUrl, {
             headers: { 

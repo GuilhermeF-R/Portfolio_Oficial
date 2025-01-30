@@ -1,3 +1,6 @@
+import { fetchGitHubAbout } from './api/github.js';
+
+// Resto do código...
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modal-title');
@@ -5,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalLink = document.getElementById('modal-link');
     const modalImage = document.getElementById('modal-image');
     const closeModal = document.querySelector('.close-modal');
+    console.log("Buscando descrição do repositório:", repoName);
+    console.log("Descrição obtida:", projectDescription);
 
     // Objeto para armazenar contagens
     const viewCounts = {};
