@@ -1,42 +1,20 @@
-// import fetch from 'node-fetch';
+// Função para buscar a descrição (About) do repositório no GitHub
+async function fetchGitHubAbout(repoName) {
+    const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
 
-// export default async (req, res) => {
-//     const { repoName } = req.query;
+    try {
+        const response = await fetch(apiUrl, {
+            headers: { Accept: "application/vnd.github.v3+json" }
+        });
 
-//     console.log(`Recebida requisição para o repositório: ${repoName}`);
+        if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
 
-//     if (!repoName) {
-//         console.error('Parâmetro repoName não fornecido.');
-//         return res.status(400).json({ error: 'O parâmetro repoName é obrigatório.' });
-//     }
+        const data = await response.json();
 
-//     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
-//     const githubToken = process.env.MYTOKEN;
-
-//     console.log(`Fazendo requisição para: ${apiUrl}`);
-
-//     try {
-//         const response = await fetch(apiUrl, {
-//             headers: {
-//                 "Accept": "application/vnd.github.v3+json",
-//                 "Authorization": `token ${githubToken}`,
-//             },
-//         });
-
-//         console.log(`Resposta da API do GitHub: ${response.status} ${response.statusText}`);
-
-//         if (!response.ok) {
-//             const errorData = await response.json();
-//             console.error('Erro na resposta da API do GitHub:', errorData);
-//             throw new Error(`Erro ao buscar dados do repositório: ${response.statusText}`);
-//         }
-
-//         const data = await response.json();
-//         console.log('Descrição do repositório:', data.description);
-
-//         res.status(200).json({ description: data.description || "Nenhuma descrição disponível." });
-//     } catch (error) {
-//         console.error('Erro ao buscar descrição do GitHub:', error);
-//         res.status(500).json({ error: 'Erro ao buscar descrição do repositório.' });
-//     }
-// };
+        // Retorna a descrição (About) do repositório
+        return data.description || "Nenhuma descrição disponível.";
+    } catch (error) {
+        console.error("Erro ao buscar descrição do GitHub:", error);
+        return "Erro ao carregar a descrição.";
+    }
+}

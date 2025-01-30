@@ -473,8 +473,10 @@
     <script src="scrollanimation.js" defer ></script>
     <!-- animação da barra moveicons -->
     <script src="moveicons.js"></script>
+    <!-- Scripts da api github-->
+    <script src="api/github.js"></script>
     <!-- script do modal de projetos -->
-     <script src="modal.js"></script>
+    <script src="modal.js"></script>
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
@@ -522,7 +524,7 @@
                     return;
                 }
     
-                fetch('https://portfolio-oficial-weld.vercel.app/api/email', {
+                fetch('https://portfolio-oficial-weld.vercel.app/api/email.js', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
