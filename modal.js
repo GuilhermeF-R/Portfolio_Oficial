@@ -1,4 +1,6 @@
 import { fetchGitHubAbout } from './api/github.js';
+const { fetchGitHubAbout } = require('./github.js'); // Usando require no backend
+
 
 // Resto do código...
 document.addEventListener('DOMContentLoaded', () => {
