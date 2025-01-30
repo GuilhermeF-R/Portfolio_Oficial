@@ -70,27 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const timeout = 10000; // 10 segundos
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), timeout);
-
+    
+        const token = process.env.MYTOKEN; // Pega o token do ambiente
+        console.log('Token usado:', token ? 'Token aceito' : 'Token não encontrado');
+    
         try {
             const response = await fetch(apiUrl, {
-                headers: { Accept: "application/vnd.github.v3+json" },
+                headers: { 
+                    Accept: "application/vnd.github.v3+json", 
+                    Authorization: `token ${token}`  // Adiciona o token de autenticação
+                },
                 signal: controller.signal
             });
-
+    
             clearTimeout(timeoutId); // Limpa o timer se a resposta chegar a tempo
-
+    
+            // Verifica a resposta para ver se o token foi aceito
+            if (response.status === 401) {
+                console.log("Token recusado: A autenticação falhou.");
+                return "Erro: Token de autenticação inválido.";
+            }
+    
             if (response.status === 403) {
-                // Verifica se o limite de requisições foi atingido
+                console.log("Limite de requisições atingido.");
                 const resetTime = response.headers.get('X-RateLimit-Reset');
                 const resetDate = new Date(resetTime * 1000); // Convertendo o timestamp para uma data legível
                 return `Limite de requisições atingido. Tente novamente às ${resetDate.toLocaleString()}.`;
             }
-
-            if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
-
+    
+            if (!response.ok) {
+                console.log("Erro ao acessar o repositório. Status:", response.status);
+                throw new Error("Não foi possível carregar a descrição.");
+            }
+    
             const data = await response.json();
-
+    
             // Retorna a descrição (About) do repositório
+            console.log("Token aceito. Descrição carregada com sucesso.");
             return data.description || "Nenhuma descrição disponível.";
         } catch (error) {
             if (error.name === 'AbortError') {
@@ -101,4 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    
 });
