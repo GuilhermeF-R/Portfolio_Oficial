@@ -529,6 +529,17 @@ section.portfolio .flex{
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
     backdrop-filter: blur(2.5px); /* Efeito de desfoque */
+    animation: fadeIn 0.5s ease;
+    transition: .12s
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {

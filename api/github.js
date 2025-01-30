@@ -1,77 +1,37 @@
 // Função para buscar a descrição (About) do repositório no GitHub
 async function fetchGitHubAbout(repoName) {
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
-    const token = process.env.MYTOKEN;  // Obtendo o token da variável de ambiente
+    const timeout = 10000; // 10 segundos
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
 
     try {
         const response = await fetch(apiUrl, {
-            headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `Bearer ${token}`  // Usando o token para autenticação
-            }
+            headers: { Accept: "application/vnd.github.v3+json" },
+            signal: controller.signal
         });
+
+        clearTimeout(timeoutId); // Limpa o timer se a resposta chegar a tempo
+
+        if (response.status === 403) {
+            // Verifica se o limite de requisições foi atingido
+            const resetTime = response.headers.get('X-RateLimit-Reset');
+            const resetDate = new Date(resetTime * 1000); // Convertendo o timestamp para uma data legível
+            return `Limite de requisições atingido. Tente novamente às ${resetDate.toLocaleString()}.`;
+        }
 
         if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
 
         const data = await response.json();
+
+        // Retorna a descrição (About) do repositório
         return data.description || "Nenhuma descrição disponível.";
     } catch (error) {
-        console.error("Erro ao buscar descrição do GitHub:", error);
-        return "Erro ao carregar a descrição.";
+        if (error.name === 'AbortError') {
+            return "Erro: Tempo de espera excedido. Tente novamente mais tarde.";
+        } else {
+            console.error("Erro ao buscar descrição do GitHub:", error);
+            return "Erro ao carregar a descrição. Tente novamente mais tarde.";
+        }
     }
 }
-
-// O restante do código permanece o mesmo, incluindo os ouvintes de eventos para o modal.
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalLink = document.getElementById('modal-link');
-    const modalImage = document.getElementById('modal-image');
-    const closeModal = document.querySelector('.close-modal');
-
-    const viewCounts = {};
-
-    function openModal(title, description, link, imageUrl) {
-        modalTitle.textContent = title;
-        modalDescription.textContent = description;
-        modalLink.href = link;
-        modalImage.src = imageUrl;
-        modal.style.display = 'block';
-
-        if (!viewCounts[title]) {
-            viewCounts[title] = 0;
-        }
-        viewCounts[title]++;
-        console.log(`O projeto "${title}" foi aberto ${viewCounts[title]} vezes.`);
-    }
-
-    function closeModalHandler() {
-        modal.style.display = 'none';
-    }
-
-    closeModal.addEventListener('click', closeModalHandler);
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModalHandler();
-        }
-    });
-
-    const portfolioImages = document.querySelectorAll('.img-port');
-
-    portfolioImages.forEach((img) => {
-        img.addEventListener('click', async () => {
-            const overlayText = img.querySelector('.overlay').textContent.trim();
-            const repoName = `${overlayText}`;
-            const projectTitle = `Projeto: ${overlayText}`;
-            const projectLink = `https://github.com/GuilhermeF-R/${repoName}`;
-            const projectImage = img.style.backgroundImage.slice(5, -2);
-
-            openModal(projectTitle, 'Carregando descrição...', projectLink, projectImage);
-
-            const projectDescription = await fetchGitHubAbout(repoName);
-            openModal(projectTitle, projectDescription, projectLink, projectImage);
-        });
-    });
-});
