@@ -613,6 +613,9 @@ section.portfolio .flex{
     font-size:20px;
 }
 
+#modal-title {
+    margin-top: 13px; /* Espaço de 10px entre o título e a descrição */
+}
 #modal-description {
     margin-top: 40px; /* Espaço de 10px entre o título e a descrição */
     line-height: 110%; 
@@ -635,7 +638,7 @@ section.portfolio .flex{
 .btn-abrir-projeto {
     display: inline-block;
     text-align: center;
-    margin-top: 450px;
+    margin-top: 430px;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
