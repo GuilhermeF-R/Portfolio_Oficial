@@ -121,6 +121,24 @@ header .btn-contato button:hover{
     color: rgb(0, 25, 107) ;
     transition: .2s;
 }
+/* Barra de Progresso no Header */
+.progress-container {
+    width: 100%;
+    height: 1.5px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;  /* Garante que a barra fique sobre outros elementos */
+}
+
+.progress-bar {
+    width: 0%;  /* Inicialmente a largura da barra é 0% */
+    height: 100%;
+    background-color:rgb(42, 89, 245); /* Cor da barra */
+    transition: width 0.25s ease-out; /* Suaviza o aumento da largura */
+}
+
 
 /* ESTILO MOBILE */
 .btn-abrir-menu i {

@@ -21,6 +21,9 @@
 </head>
 <body>
     <header>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
         <div class="interface hidden">
             <div class="logo">
                 <a href="#">
@@ -468,13 +471,15 @@
     <!-- script carrosel -->
     <script src="carrossel.js" defer ></script>
     <!-- script lenis rolagem suave (script) -->
-    <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer ></script>
     <!--  script animação de rolagem -->
     <script src="scrollanimation.js" defer ></script>
     <!-- animação da barra moveicons -->
-    <script src="moveicons.js"></script>
+    <script src="moveicons.js" defer ></script>
     <!-- script do modal de projetos -->
-    <script src="modal.js" ></script>
+    <script src="modal.js" defer ></script>
+    <!-- progressbar -->
+     <script src="progressbar.js" defer ></script>
 
     <!-- front-end se comunicando com o back-end, Server.-->
     <script>
