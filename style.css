@@ -533,7 +533,20 @@ section.portfolio .flex{
     color: #fff;
     opacity: 0;
     transition: .5s;
+    animation: highlightIcon .8s infinite alternate;
 }
+
+@keyframes highlightIcon {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+        text-shadow: 0 0 10px rgba(56, 149, 255, 0.8), 0 0 20px rgba(56, 149, 255, 0.6);
+    }
+    100% {
+        transform: scale(1.03); /* Aumenta o tamanho */
+        text-shadow: 0 0 20px rgba(56, 149, 255, 1), 0 0 30px rgba(56, 149, 255, 0.8);
+    }
+}
+
 .overlay:hover {
     box-shadow: 0 0 20px rgb(109, 158, 248);
     opacity: 1;
@@ -1036,6 +1049,12 @@ footer .line-footer h1 span{
         transform: rotate(90deg); /* Gira o ícone em 90 graus */
     }
 
+    .overlay {
+        font-size: 20px;
+        flex-direction: column;
+        line-height: 120%;
+    }
+
     /* Estilos da Modal */
 
     .modal-content {
@@ -1313,18 +1332,25 @@ footer .line-footer h1 span{
         margin-left: -100px;
     }
     .btn-abrir-projeto {
-        margin-top: 230px; /* Ajustar o espaçamento do botão */
+        margin-top: 210px; /* Ajustar o espaçamento do botão */
         margin-left: -100px;
     }
 }
 @media screen and (max-width: 320px){
+    /* portfolio */
+    .overlay {
+        font-size: 15px;
+        line-height: 120%;
+    }
     /* portfolio modal adjust */
     #modal-title{
-        margin-top: 50px; /* Ajustar o espaçamento */
+        font-size: 20px;
+        margin-top: 30px; /* Ajustar o espaçamento */
         margin-left: -80px;
     }
 
     #modal-description {
+        font-size: 18px;
         margin-top: 20px; /* Ajustar o espaçamento */
         margin-left: -80px;
         
