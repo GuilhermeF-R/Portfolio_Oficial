@@ -1,20 +1,34 @@
-// Função para buscar a descrição (About) do repositório no GitHub
-async function fetchGitHubAbout(repoName) {
+import fetch from 'node-fetch';
+
+export default async function fetchGitHubAbout(req, res) {
+    if (req.method !== 'GET') {
+        return res.status(405).json({ error: 'Método não permitido' });
+    }
+
+    const { repoName } = req.query;
+    if (!repoName) {
+        return res.status(400).json({ error: 'Nome do repositório é obrigatório' });
+    }
+
+    const GITHUBTOKEN = process.env.MYTOKEN; // O token é armazenado no ambiente do Vercel
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
 
     try {
         const response = await fetch(apiUrl, {
-            headers: { Accept: "application/vnd.github.v3+json" }
+            headers: {
+                Accept: "application/vnd.github.v3+json",
+                Authorization: `Bearer ${GITHUBTOKEN}`
+            }
         });
 
-        if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
+        if (!response.ok) {
+            throw new Error("Não foi possível carregar a descrição.");
+        }
 
         const data = await response.json();
-
-        // Retorna a descrição (About) do repositório
-        return data.description || "Nenhuma descrição disponível.";
+        return res.status(200).json({ description: data.description || "Nenhuma descrição disponível." });
     } catch (error) {
         console.error("Erro ao buscar descrição do GitHub:", error);
-        return "Erro ao carregar a descrição.";
+        return res.status(500).json({ error: "Erro ao carregar a descrição." });
     }
 }
