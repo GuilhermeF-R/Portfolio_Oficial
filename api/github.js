@@ -2,7 +2,14 @@
 export { fetchGitHubAbout };
 
 console.log("Buscando repositório:", repoName);
+
 async function fetchGitHubAbout(repoName) {
+    // Verifica se o nome do repositório foi fornecido
+    if (!repoName) {
+        console.error("Nome do repositório não fornecido.");
+        return "Erro: Nome do repositório não fornecido.";
+    }
+
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
     const timeout = 10000; // 10 segundos
     const controller = new AbortController();
