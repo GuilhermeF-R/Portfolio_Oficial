@@ -1,6 +1,6 @@
 // Função para buscar a descrição (About) do repositório no GitHub
 async function fetchGitHubAbout(repoName) {
-    const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
+    const apiUrl = `https://github.com/GuilhermeF-R/${repoName}`;
     const timeout = 10000; // 10 segundos
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout);
