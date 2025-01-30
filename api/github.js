@@ -1,10 +1,14 @@
 // Função para buscar a descrição (About) do repositório no GitHub
 async function fetchGitHubAbout(repoName) {
     const apiUrl = `https://api.github.com/repos/GuilhermeF-R/${repoName}`;
+    const MYTOKEN = process.env.MYTOKEN; // Acessa a variável de ambiente
 
     try {
         const response = await fetch(apiUrl, {
-            headers: { Accept: "application/vnd.github.v3+json" }
+            headers: { 
+                Accept: "application/vnd.github.v3+json",
+                Authorization: `Bearer ${MYTOKEN}` // Adiciona o token no cabeçalho
+            }
         });
 
         if (!response.ok) throw new Error("Não foi possível carregar a descrição.");
