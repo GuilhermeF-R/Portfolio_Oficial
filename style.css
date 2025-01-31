@@ -934,7 +934,7 @@ footer .line-footer h1 span{
 @media screen and (max-width: 1280px){
     /* Estilos da Modal */
     .modal-content {
-        height: 70%;
+        height: 85%;
     }
 
     .btn-abrir-projeto {
@@ -945,7 +945,7 @@ footer .line-footer h1 span{
     }
         /* Estilo quando o botão "Deploy" está visível */
     #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
-        margin-top: 10px; /* Reduz o espaçamento superior */
+        margin-top: 2px; /* Reduz o espaçamento superior */
     }
 
     /* Estilo quando o botão "Deploy" está oculto */
@@ -954,7 +954,7 @@ footer .line-footer h1 span{
     }
 
     .btn-deploy {
-        margin-top: 40px;
+        margin-top: 1px;
         padding: 10px 20px;
     }
 }
@@ -1113,6 +1113,16 @@ footer .line-footer h1 span{
     .modal-content {
         margin: 10% auto;
         width: 80%;
+        height: 53%;
+    }
+
+    /* Estilo quando o botão "Deploy" está visível */
+    #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+        margin-top: 10px; /* Reduz o espaçamento superior */
+    }
+
+    #modal-deploy{
+        margin-top: 20px; /* Reduz o espaçamento superior */
     }
 
     #modal-description {
@@ -1384,17 +1394,16 @@ footer .line-footer h1 span{
         margin-left: -110px;
     }
     .btn-abrir-projeto {
-        margin-top: 300px; /* Ajustar o espaçamento do botão */
         margin-left: -110px;
     }
     /* Estilo quando o botão "Deploy" está visível */
     #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
-        margin-top: 10px; /* Reduz o espaçamento superior */
+        margin-top: 250px; /* Reduz o espaçamento superior */
     } 
 
     /* Estilo quando o botão "Deploy" está oculto */
     #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
-        margin-top: 50px; /* Aumenta o espaçamento superior */
+        margin-top: 300px; /* Ajustar o espaçamento do botão */
     } 
 
     .btn-deploy {
@@ -1414,12 +1423,20 @@ footer .line-footer h1 span{
         margin-left: -100px;
     }
     .btn-abrir-projeto {
-        margin-top: 210px; /* Ajustar o espaçamento do botão */
         margin-left: -100px;
     }
     
     .btn-deploy {
         margin-left: -100px;
+    } 
+       /* Estilo quando o botão "Deploy" está visível */
+       #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+        margin-top: 0px; /* Reduz o espaçamento superior */
+    } 
+
+    /* Estilo quando o botão "Deploy" está oculto */
+    #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+        margin-top: 210px; /* Ajustar o espaçamento do botão */
     } 
 }
 @media screen and (max-width: 320px){
@@ -1432,21 +1449,30 @@ footer .line-footer h1 span{
     #modal-title{
         font-size: 20px;
         margin-top: 30px; /* Ajustar o espaçamento */
-        margin-left: -80px;
+        margin-left: -90px;
     }
 
     #modal-description {
         font-size: 18px;
         margin-top: 20px; /* Ajustar o espaçamento */
-        margin-left: -80px;
+        margin-left: -90px;
         
     }
     .btn-abrir-projeto {
         margin-top: 10px; /* Ajustar o espaçamento do botão */
-        margin-left: -80px;
+        margin-left: -90px;
     }
     .btn-deploy {
         margin-top: 10px; /* Ajustar o espaçamento do botão */
-        margin-left: -80px;
+        margin-left: -90px;
+    } 
+     /* Estilo quando o botão "Deploy" está visível */
+     #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+        margin-top: 0px; /* Reduz o espaçamento superior */
+    } 
+
+    /* Estilo quando o botão "Deploy" está oculto */
+    #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+        margin-top: 20px; /* Ajustar o espaçamento do botão */
     } 
 }
