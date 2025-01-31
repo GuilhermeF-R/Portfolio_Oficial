@@ -639,7 +639,6 @@ section.portfolio .flex{
 .btn-abrir-projeto {
     display: inline-block;
     text-align: center;
-    margin-top: 430px;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -649,6 +648,34 @@ section.portfolio .flex{
 }
 
 .btn-abrir-projeto:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(109, 158, 248);
+}
+
+/* Estilo quando o botão "Deploy" está visível */
+#modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+    margin-top: 10px; /* Reduz o espaçamento superior */
+}
+
+/* Estilo quando o botão "Deploy" está oculto */
+#modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+    margin-top: 400px; /* Aumenta o espaçamento superior */
+}
+
+.btn-deploy {
+    display: inline-block;
+    text-align: center;
+    margin-top: 310px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.btn-deploy:hover {
     background-color: #0056b3;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgb(109, 158, 248);
@@ -907,6 +934,20 @@ footer .line-footer h1 span{
     }
     #modal-description {
         line-height: 100%; 
+    }
+        /* Estilo quando o botão "Deploy" está visível */
+    #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+        margin-top: 10px; /* Reduz o espaçamento superior */
+    }
+
+    /* Estilo quando o botão "Deploy" está oculto */
+    #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+        margin-top: 50px; /* Aumenta o espaçamento superior */
+    }
+
+    .btn-deploy {
+        margin-top: 40px;
+        padding: 10px 20px;
     }
 }
 
@@ -1335,6 +1376,20 @@ footer .line-footer h1 span{
         margin-top: 300px; /* Ajustar o espaçamento do botão */
         margin-left: -110px;
     }
+    /* Estilo quando o botão "Deploy" está visível */
+    /* #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+        margin-top: 10px; /* Reduz o espaçamento superior */
+    /* } 
+
+    /* Estilo quando o botão "Deploy" está oculto */
+    /* #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+        margin-top: 50px; /* Aumenta o espaçamento superior */
+    /* } 
+
+    .btn-deploy {
+        margin-top: 40px;
+        padding: 10px 20px;
+    } */
 }
 @media screen and (max-width: 395px){
     /* portfolio modal adjust */

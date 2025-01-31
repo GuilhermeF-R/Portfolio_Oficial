@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalLink = document.getElementById('modal-link');
     const modalImage = document.getElementById('modal-image');
     const closeModal = document.querySelector('.close-modal');
+    const modalDeploy = document.getElementById('modal-deploy'); // Botão Deploy
 
     // Objeto para armazenar contagens
     const viewCounts = {};
@@ -17,6 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modalImage.src = imageUrl;
         modal.style.display = 'block';
 
+        // Verifica se o projeto é um dos que precisam do botão Deploy
+        const projectsWithDeploy = ['audiobook-service', 'hashtaurante', 'profile-card', 'notepad'];
+        const projectName = title.replace('Projeto: ', '').toLowerCase();
+
+        if (projectsWithDeploy.includes(projectName)) {
+            // Mostra o botão Deploy e define o link
+            modalDeploy.style.display = 'inline-block';
+            modalDeploy.href = getDeployLink(projectName);
+        } else {
+            // Esconde o botão Deploy
+            modalDeploy.style.display = 'none';
+        }
+
         // Atualiza o contador de visualizações
         if (!viewCounts[title]) {
             viewCounts[title] = 0;
@@ -25,6 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Exibe a contagem no console
         console.log(`O projeto "${title}" foi aberto ${viewCounts[title]} vezes.`);
+    }
+
+    // Função para obter o link de deploy com base no nome do projeto
+    function getDeployLink(projectName) {
+        const deployLinks = {
+            'audiobookservice': 'https://guilhermef-r.github.io/Audiobook-Service/',
+            'hashtaurante': 'https://hashtaurante-devgferreira.vercel.app/',
+            'profile card': 'https://profile-card-iota-bice.vercel.app/',
+            'notepad': 'https://notepad-devgferreira.vercel.app/'
+        };
+        return deployLinks[projectName] || '#';
     }
 
     // Função para fechar a modal
