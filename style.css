@@ -1113,7 +1113,6 @@ footer .line-footer h1 span{
     .modal-content {
         margin: 10% auto;
         width: 80%;
-        
     }
 
     #modal-description {
@@ -1309,6 +1308,10 @@ footer .line-footer h1 span{
         width: 100%; /* Faz o botão ocupar a largura total */
         padding: 10px; /* Ajustar o padding do botão */
     }
+    .btn-deploy {
+        width: 100%; /* Faz o botão ocupar a largura total */
+        padding: 10px; /* Ajustar o padding do botão */
+    }
 
     .modal-img img {
         display: none; /* Esconder a imagem em dispositivos móveis */
@@ -1385,19 +1388,19 @@ footer .line-footer h1 span{
         margin-left: -110px;
     }
     /* Estilo quando o botão "Deploy" está visível */
-    /* #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
+    #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
         margin-top: 10px; /* Reduz o espaçamento superior */
-    /* } 
+    } 
 
     /* Estilo quando o botão "Deploy" está oculto */
-    /* #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
+    #modal-deploy[style*="display: none"] + .btn-abrir-projeto {
         margin-top: 50px; /* Aumenta o espaçamento superior */
-    /* } 
+    } 
 
     .btn-deploy {
-        margin-top: 40px;
-        padding: 10px 20px;
-    } */
+        margin-top: 100px;
+        margin-left: -110px;
+    } 
 }
 @media screen and (max-width: 395px){
     /* portfolio modal adjust */
@@ -1414,6 +1417,10 @@ footer .line-footer h1 span{
         margin-top: 210px; /* Ajustar o espaçamento do botão */
         margin-left: -100px;
     }
+    
+    .btn-deploy {
+        margin-left: -100px;
+    } 
 }
 @media screen and (max-width: 320px){
     /* portfolio */
@@ -1435,7 +1442,11 @@ footer .line-footer h1 span{
         
     }
     .btn-abrir-projeto {
-        margin-top: 20px; /* Ajustar o espaçamento do botão */
+        margin-top: 10px; /* Ajustar o espaçamento do botão */
         margin-left: -80px;
     }
+    .btn-deploy {
+        margin-top: 10px; /* Ajustar o espaçamento do botão */
+        margin-left: -80px;
+    } 
 }

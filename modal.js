@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block';
 
         // Verifica se o projeto é um dos que precisam do botão Deploy
-        const projectsWithDeploy = ['audiobook-service', 'hashtaurante', 'profile-card', 'notepad'];
+        const projectsWithDeploy = [ 'hashtaurante', 'notepad']; //'audiobook-service', 'profile-card',
         const projectName = title.replace('Projeto: ', '').toLowerCase();
 
         if (projectsWithDeploy.includes(projectName)) {
