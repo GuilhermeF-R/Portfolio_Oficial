@@ -13,14 +13,15 @@
 .hidden {
     opacity: 0;
     filter: blur(20px);
-    transition: all 1.6s;
+    transition: all 0.8s;
     transform: translateX(-100%);
+    will-change: opacity, filter, transform;
 }
 
 .show {
     opacity: 1;
     filter: blur(0px);
-    transition: all 1.8s;
+    transition: all 1.3s;
     transform: translateX(0);
 }
 
@@ -1308,6 +1309,18 @@ footer .line-footer h1 span{
     }
 }
 @media screen and (max-width: 450px){
+    /* animation scroll */
+    .hidden {
+        opacity: 0;
+        transform: translateY(-10px); /* Começa 20px abaixo */
+        transition: opacity 2s ease, transform 0.8s ease;
+        will-change: opacity, transform; /* Otimiza para animação */
+        filter: none;
+    }
+    .show {
+        opacity: 1;
+        transform: translateY(0); /* Vai para a posição original */
+    }
     /* portfolio modal adjust */
     #modal-title{
         margin-top: 50px; /* Ajustar o espaçamento */
