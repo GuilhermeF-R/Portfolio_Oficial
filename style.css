@@ -653,6 +653,10 @@ section.portfolio .flex{
     box-shadow: 0 0 10px rgb(109, 158, 248);
 }
 
+.btn-abrir-projeto i {
+    color:rgb(255, 255, 255);
+}
+
 /* Estilo quando o botão "Deploy" está visível */
 #modal-deploy:not([style*="display: none"]) + .btn-abrir-projeto {
     margin-top: 10px; /* Reduz o espaçamento superior */
@@ -679,6 +683,10 @@ section.portfolio .flex{
     background-color: #0056b3;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgb(109, 158, 248);
+}
+.btn-deploy i {
+    color:rgb(255, 255, 255);
+    font-size: 17px;
 }
 
 /* ESTILO DO FORMULARIO DE CONTATO */
