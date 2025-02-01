@@ -41,16 +41,16 @@ Este projeto foi desenvolvido durante a trilha de React do evento NLW Expert da 
 - **Sonner**
 
 ### [Hashtaurante](https://github.com/GuilhermeF-R/Hashtaurante)
-Este projeto utiliza **React** e **Tailwind CSS** e simula um cardápio de restaurante onde você pode visualizar pratos e escolher entre pratos principais, sobremesas e bebidas.
+Este projeto utiliza **React** e **Vite** e simula um cardápio de restaurante onde você pode visualizar pratos e escolher entre pratos principais, sobremesas e bebidas.
 
 #### Funcionalidades:
 - Visualização do cardápio de pratos.
 - Em cada aba, as imagens se transformam para refletir suas escolhas entre pratos principais, sobremesas e bebidas, garantindo uma experiência visualmente personalizada.
-- Design responsivo com **Tailwind CSS** para proporcionar uma experiência de usuário fluida.
+- Design responsivo para proporcionar uma experiência de usuário fluida.
 
 #### Tecnologias utilizadas:
 - **React**
-- **Tailwind CSS**
+- **Vite**
 
 # :gear: Tecnologias
 
