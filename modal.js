@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para obter o link de deploy com base no nome do projeto
     function getDeployLink(projectName) {
         const deployLinks = {
-            'audiobookservice': 'https://audiobook-service.vercel.app/',
+            'audiobook-service': 'https://audiobook-service.vercel.app/',
             'hashtaurante': 'https://hashtaurante-devgferreira.vercel.app/',
-            'profile card': 'https://profile-card-iota-bice.vercel.app/',
+            'profile-card': 'https://profile-card-iota-bice.vercel.app/',
             'notepad': 'https://notepad-devgferreira.vercel.app/'
         };
         return deployLinks[projectName] || `projectdeploylink-${projectName}`; // Fallback dinâmico
