@@ -65,7 +65,9 @@ Este projeto utiliza **React** e **Vite** e simula um cardápio de restaurante o
 <a href="https://linkr.bio/DevFerreira" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-links-000?style=for-the-badge" target="_blank"></a>
 
 # ☕: Veja abaixo um pouco do meu Portfólio Online:
-![gif](https://github.com/user-attachments/assets/0752f662-eb97-4a3f-8576-efed0dd18b44)
+
+![Screenshot_19](https://github.com/user-attachments/assets/fe5e2e07-53ce-4008-b939-36e099706b84)
+
 
 
 
