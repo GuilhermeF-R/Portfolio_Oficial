@@ -66,8 +66,8 @@ Este projeto utiliza **React** e **Vite** e simula um cardápio de restaurante o
 
 # ☕: Veja abaixo um pouco do meu Portfólio Online:
 
-![gif](<img src="https://github.com/user-attachments/assets/ef3de8c6-1f64-40a7-9931-51eef5b5cfb4" width="500" height="auto"/>)
-<img src="https://github.com/user-attachments/assets/ef3de8c6-1f64-40a7-9931-51eef5b5cfb4" width="500" height="auto"/>
+
+<img src="https://github.com/user-attachments/assets/ef3de8c6-1f64-40a7-9931-51eef5b5cfb4" width="900" height="auto"/>
 
 
 
