@@ -6,26 +6,51 @@ Este repositório faz parte do meu portfólio oficial, criado por mim com o obje
 ## [Portfolio_Oficial](https://portfolio-oficial-weld.vercel.app/#)
 Este é meu portfólio pessoal, desenvolvido utilizando **JavaScript, Node.js, Express, Nodemailer** e **design responsivo**. O projeto conta com as seguintes funcionalidades:
 
-- **Interface responsiva** com foco em dispositivos móveis.
+- **Interface responsiva** adaptada para diferentes tamanhos de tela.
 - **Envio de e-mails** com a integração de Nodemailer para facilitar o contato com os visitantes.
 - **Manipulação de imagens** e **efeitos de carrossel** para uma experiência visual mais rica.
 - **Back-end dinâmico** para personalizar a interação e apresentar informações relevantes.
 
 ### Funcionalidades:
-- **Página inicial dinâmica** com links para todos os meus projetos.
+- **Página inicial dinâmica** com links para alguns dos meus projetos.
 - **Formulário de contato** funcional com envio de e-mail via backend.
 - **Carrossel de imagens** com transições suaves.
   
 ### Tecnologias utilizadas:
-- **Frontend:** HTML, CSS, JavaScript, Tailwind CSS
-- **Backend:** Node.js, Express, Nodemailer
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Nodemailer
 - **Hospedagem:** Vercel
+- **Outros:** .env, GitHub API
 
-## [Outros Projetos](https://github.com/GuilhermeF-R)
-Aqui estão alguns projetos adicionais que desenvolvi ao longo do meu aprendizado e experiência como desenvolvedor. Você pode conferir o código-fonte e mais detalhes clicando nos links abaixo.
+## Outros Projetos:
 
-- **[Projeto A](https://github.com/GuilhermeF-R/projeto-a)** - Descrição breve do projeto.
-- **[Projeto B](https://github.com/GuilhermeF-R/projeto-b)** - Descrição breve do projeto.
+### [Notepad](https://github.com/GuilhermeF-R/Notepad)
+Este projeto foi desenvolvido durante a trilha de React do evento NLW Expert da [Rocketseat](https://app.rocketseat.com.br/), utilizando **React** e **Vite** com **TypeScript**. O objetivo principal é criar um site de notas que permite salvar, deletar e gerenciar notas de maneira simples e eficiente.
+
+#### Funcionalidades:
+- Grave uma nota por meio de áudio.
+- Grave uma nota por meio de texto.
+- Delete ou salve as notas.
+- Notificação utilizando [Sonner](https://sonner.emilkowal.ski/).
+- Armazenamento das notas no **local storage**.
+
+#### Tecnologias utilizadas:
+- **React** 
+- **Vite**
+- **TypeScript**
+- **Sonner**
+
+### [Hashtaurante](https://github.com/GuilhermeF-R/Hashtaurante)
+Este projeto utiliza **React** e **Tailwind CSS** e simula um restaurante onde você pode visualizar pratos e realizar pedidos. Ele permite que os usuários interajam com o cardápio e realizem pedidos como em um restaurante real.
+
+#### Funcionalidades:
+- Visualização do cardápio de pratos.
+- Realização de pedidos.
+- Design responsivo com **Tailwind CSS** para proporcionar uma experiência de usuário fluida.
+
+#### Tecnologias utilizadas:
+- **React**
+- **Tailwind CSS**
 
 # :gear: Tecnologias
 
