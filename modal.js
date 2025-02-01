@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block';
 
         // Verifica se o projeto é um dos que precisam do botão Deploy
-        const projectsWithDeploy = [ 'hashtaurante', 'notepad']; //'audiobook-service', 'profile-card',
+        const projectsWithDeploy = ['audiobook-service', 'profile-card', 'hashtaurante', 'notepad'];
         const projectName = title.replace('Projeto: ', '').toLowerCase();
 
         if (projectsWithDeploy.includes(projectName)) {
@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para obter o link de deploy com base no nome do projeto
     function getDeployLink(projectName) {
         const deployLinks = {
-            // 'audiobookservice': 'https://guilhermef-r.github.io/Audiobook-Service/',
+            'audiobookservice': 'https://audiobook-service.vercel.app/',
             'hashtaurante': 'https://hashtaurante-devgferreira.vercel.app/',
-            // 'profile card': 'https://profile-card-iota-bice.vercel.app/',
+            'profile card': 'https://profile-card-iota-bice.vercel.app/',
             'notepad': 'https://notepad-devgferreira.vercel.app/'
         };
         return deployLinks[projectName] || `projectdeploylink-${projectName}`; // Fallback dinâmico
