@@ -19,11 +19,7 @@
 // /api/email.js
 import nodemailer from 'nodemailer';
 
-export default async (req, res) => {
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS length:", process.env.EMAIL_PASS.length); // Não imprime a senha, apenas o tamanho
-    console.log("EMAIL_TO:", process.env.EMAIL_TO);
-
+export default async (req, res) => { 
     if (req.method === 'POST') {
         const { name, email, phone, message } = req.body;
 
@@ -39,8 +35,8 @@ export default async (req, res) => {
 
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
-            port: 587,  // Usando a porta 587 para TLS
-            secure: false,  // Usando TLS
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
