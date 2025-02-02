@@ -20,6 +20,10 @@
 import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS length:", process.env.EMAIL_PASS.length); // Não imprime a senha, apenas o tamanho
+    console.log("EMAIL_TO:", process.env.EMAIL_TO);
+
     if (req.method === 'POST') {
         const { name, email, phone, message } = req.body;
 
